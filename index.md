@@ -99,6 +99,11 @@ introspection?
   - [Here is a nice explanation of how OpenID connect works](https://yasasramanayaka.medium.com/openid-connect-authorization-code-flow-8c02081135fc).
   - The OpenID Connect flow is projected on the euroteq usecase [in this diagram](./openidconnect.md)
 
+## Testing
+
+- How can I test the registration flow?
+  - [See the page on testing](./testing.md)
+
 ## Status
 
 - Where can I see what has to be done, and what has already been done by
