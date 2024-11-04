@@ -100,10 +100,11 @@ introspection?
 - How do I do introspection?
   - Using curl: `curl -k -u RS-Client-ID:RS-CLIENT-Secret -H 'Content-Type: application/x-www-form-urlencoded' -X POST --data 'token=eyJhbGciOiJFUzI1NiIsImtpZCI6Ik1sVm9jb...' https://proxy.prod.erasmus.eduteams.org/OIDC/introspect -q | jq`
   - Example Response:
+
    ```
    {
      "active": true,
-     "scope": "openid email schac_personal_unique_code institutuin.tld/persons institutuin.tld/persons",
+     "scope": "openid email schac_personal_unique_code institution.tld/persons institution.tld/persons",
      "client_id": "APP-02BDEC4A-6B0D-4488-8932-4E92A8A80F71",
      "exp": 1730715844,
      "iat": 1730712244,
@@ -116,8 +117,9 @@ introspection?
      "email": "user.edmail@institution.tld"
    }
    ```
-   - In the response validate `"active": true` and the scopes for your institution are present. In the example `institutuin.tld/persons` and `institutuin.tld/results`
-   - Use the email to look up your user
+
+  - In the response validate `"active": true` and the scopes for your institution are present. In the example `institution.tld/persons` and `institution.tld/results`
+  - Use the email to look up your user
 
 ## Testing
 
