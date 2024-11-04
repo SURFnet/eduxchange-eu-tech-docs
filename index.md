@@ -8,9 +8,8 @@
 - What OOAPI endpoints are needed for enrollment?
   - GET /persons/me
   - POST /associations/external/me
-  - GET /associations/{associationId}  
-  - POST /associations/{associationId}  
-  - PATCH /associations/{associationId}  
+  - GET /associations/{associationId}
+  - PATCH /associations/{associationId}
     These endpoints will be protected using oauth tokens.
 
 ## About the broker
