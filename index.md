@@ -98,6 +98,27 @@ receiver and the custom implementation at the host institution?
 introspection?
   - [Here is a nice explanation of how OpenID connect works](https://yasasramanayaka.medium.com/openid-connect-authorization-code-flow-8c02081135fc).
   - The OpenID Connect flow is projected on the euroteq usecase [in this diagram](./openidconnect.md)
+- How do I do introspection?
+  - In Ccurl: `curl -k -u RS-Client-ID:RS-CLIENT-Secret -H 'Content-Type: application/x-www-form-urlencoded' -X POST --data 'token=eyJhbGciOiJFUzI1NiIsImtpZCI6Ik1sVm9jb...' https://proxy.prod.erasmus.eduteams.org/OIDC/introspect -q | jq`
+  - Example Response:
+   ```
+   {
+     "active": true,
+     "scope": "openid email schac_personal_unique_code institutuin.tld/persons institutuin.tld/persons",
+     "client_id": "APP-02BDEC4A-6B0D-4488-8932-4E92A8A80F71",
+     "exp": 1730715844,
+     "iat": 1730712244,
+     "sub": "ae3881fe8102b250e1d0766c600010a85faa9b19@myacademicid.org",
+     "iss": "https://proxy.prod.erasmus.eduteams.org",
+     "token_type": "Bearer",
+     "aud": [
+       "APP-02BDEC4A-6B0D-4488-8932-4E92A8A80F71"
+     ],
+     "email": "user.edmail@institution.tld"
+   }
+   ```
+   - In the response validate `"active": true` the scopes for your institution are present. In the example `institutuin.tld/persons` and `institutuin.tld/persons`
+   - Use the email to look up your user
 
 ## Testing
 
