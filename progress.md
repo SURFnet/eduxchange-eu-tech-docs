@@ -20,8 +20,8 @@
 | TalTech OOAPI (RS) | APP-6F33341E-9BC0-41DB-B6E7-FB2DC88F0BBC |
 | Technion receiver (RP)| |
 | Technion OOAPI (RS) | APP-E0E90AD9-2F41-4D52-ACBA-0EDC628D3BB6 |
-| CTU receiver (RP) | |
-| CTU OOAPI (RS) | |
+| CTU receiver (RP) |  APP-4D5BE672-9F40-4968-96A0-EA2B23778517 |
+| CTU OOAPI (RS) | APP-752753D0-F4DB-4C12-B900-541D162028E1 |
 
 [Click here](https://github.com/SURFnet/eduxchange-eu-tech-docs/edit/main/progress.md)
 to edit this page
