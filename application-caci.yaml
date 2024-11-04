@@ -95,7 +95,7 @@ oidc:
   client-secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   #### <-- get from Ben
   #
   # The oidc redirect url. This should match the MyacademinID registration
-  redirect-uri: https://<your-hostname-for-this-component>/redirect_uri
+  redirect-uri: https://tueacc-surf.osiris-link.nl/inteken-ontvanger-generiek/redirect_uri
   #
   # Don't edit these
   authorization-uri: https://proxy.prod.erasmus.eduteams.org/OIDC/authorization
