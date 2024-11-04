@@ -63,10 +63,10 @@ features:
 # is a separate component.
 # user and secret should be changed and communicated with the eduxchange team
 broker:
-  url: "https://demobroker.eduxchange.eu/"
+  url: "https://broker.test.eduxchange.eu/"
   user: user
   password: secret
-  service_registry_base_url: "https://demobroker.eduxchange.eu/"
+  service_registry_base_url: "https://broker.test.eduxchange.eu/"
 
 # Credentials of the student information system to
 # check against when reporting back results. These are the username and
