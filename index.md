@@ -117,7 +117,7 @@ introspection?
      "email": "user.edmail@institution.tld"
    }
    ```
-   - In the response validate `"active": true` the scopes for your institution are present. In the example `institutuin.tld/persons` and `institutuin.tld/persons`
+   - In the response validate `"active": true` and the scopes for your institution are present. In the example `institutuin.tld/persons` and `institutuin.tld/persons`
    - Use the email to look up your user
 
 ## Testing
