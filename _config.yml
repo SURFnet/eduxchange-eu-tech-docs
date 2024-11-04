@@ -2,5 +2,5 @@ remote_theme: pages-themes/slate@v0.2.0
 plugins:
 - jekyll-remote-theme # add this line to the plugins list if you already have one
 title: Technical documentation for eduxchange.eu
-description: A collection of technical documents for connecting to eduxchange.eu for euroteq
+description: A collection of technical documents for connecting to eduxchange.eu for EuroTeQ
 show_downloads: false

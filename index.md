@@ -83,7 +83,7 @@ receiver and the custom implementation at the host institution?
 
   To make the scope identifier unique, the institutiond primary domain is added.
   So to request access to the personal data of a student of MyUniversity, the
-  scope `myuniversity.org/person` is requested.
+  scope `institution.tld/persons` is requested.
 
   When receiving a token, the MyUniversity's API endpoint **must** validate if
   the scope is valid for the API being called.
@@ -98,13 +98,13 @@ introspection?
   - [Here is a nice explanation of how OpenID connect works](https://yasasramanayaka.medium.com/openid-connect-authorization-code-flow-8c02081135fc).
   - The OpenID Connect flow is projected on the euroteq usecase [in this diagram](./openidconnect.md)
 - How do I do introspection?
-  - Using curl: `curl -k -u RS-Client-ID:RS-CLIENT-Secret -H 'Content-Type: application/x-www-form-urlencoded' -X POST --data 'token=eyJhbGciOiJFUzI1NiIsImtpZCI6Ik1sVm9jb...' https://proxy.prod.erasmus.eduteams.org/OIDC/introspect -q | jq`
+  - Example using curl: `curl -k -u RS-Client-ID:RS-CLIENT-Secret -H 'Content-Type: application/x-www-form-urlencoded' -X POST --data 'token=eyJhbGciOiJFUzI1NiIsImtpZCI6Ik1sVm9jb...' https://proxy.prod.erasmus.eduteams.org/OIDC/introspect -q | jq`
   - Example Response:
 
    ```json
    {
      "active": true,
-     "scope": "openid email schac_personal_unique_code institution.tld/persons institution.tld/persons",
+     "scope": "openid email schac_personal_unique_code institution.tld/persons institution.tld/results",
      "client_id": "APP-02BDEC4A-6B0D-4488-8932-4E92A8A80F71",
      "exp": 1730715844,
      "iat": 1730712244,
