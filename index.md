@@ -101,7 +101,7 @@ introspection?
   - Using curl: `curl -k -u RS-Client-ID:RS-CLIENT-Secret -H 'Content-Type: application/x-www-form-urlencoded' -X POST --data 'token=eyJhbGciOiJFUzI1NiIsImtpZCI6Ik1sVm9jb...' https://proxy.prod.erasmus.eduteams.org/OIDC/introspect -q | jq`
   - Example Response:
 
-   ```
+   ```json
    {
      "active": true,
      "scope": "openid email schac_personal_unique_code institution.tld/persons institution.tld/persons",
