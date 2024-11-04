@@ -97,6 +97,8 @@ receiver and the custom implementation at the host institution?
   - taltech.ee/results
   - du50.vc.cvut.cz/eq/resource/v5/persons
   - du50.vc.cvut.cz/eq/resource/v5/results
+  - technion.ac.il/persons
+  - technion.ac.il/results
 
   When receiving a token, the MyUniversity's API endpoint **must** validate if
   the scope is valid for the API being called.
