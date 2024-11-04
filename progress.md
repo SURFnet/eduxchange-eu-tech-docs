@@ -11,7 +11,6 @@
 | Czech Technical University in Prague      |             ✅             |              ⛔               |                       ⛔                       |                            Work In Progress                             |                    ⛔                     |                    ⛔                     |                         |                         |                         |
 | École Polytechnique Fédérale de Lausanne  |             ✅             |                               |                                                |                                                                         |                                           |                                           |                         |                         |                         |
 
-
 ## Current registrations
 
 | Name                   | Clientid                                 |
