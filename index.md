@@ -75,15 +75,28 @@ receiver and the custom implementation at the host institution?
 
   Scope is a mechanism in OAuth 2.0 to limit an application's access to a user's account. An application can request one or more scopes, this information is then presented to the user in the consent screen, and the access token issued to the application will be limited to the scopes granted.
 
-  For EuroTeQ, two scopes are used:
+  For EuroTeQ, two general scopes are used:
   - `email` : To retrieve the user's home institution email
-  - `schac_personal_unique_code` : To retrieve the user's identifier ath the home institution
+  - `schac_personal_unique_code` : To retrieve the user's identifier at the home institution
+
+  Also, two institution specific scopes are used:
   - `persons`: Personal Information
   - `results`: Enrollment and results
 
   To make the scope identifier unique, the institutiond primary domain is added.
   So to request access to the personal data of a student of MyUniversity, the
   scope `institution.tld/persons` is requested.
+
+  Currently, these scopes are known for EutoTeQ institutions:
+
+  - demoinst01.eduxchange.eu/persons
+  - demoinst01.eduxchange.eu/results
+  - demoinst02.eduxchange.eu/persons
+  - demoinst02.eduxchange.eu/results
+  - taltech.ee/persons
+  - taltech.ee/results
+  - du50.vc.cvut.cz/eq/resource/v5/persons
+  - du50.vc.cvut.cz/eq/resource/v5/results
 
   When receiving a token, the MyUniversity's API endpoint **must** validate if
   the scope is valid for the API being called.
