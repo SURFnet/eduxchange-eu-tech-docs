@@ -99,7 +99,7 @@ introspection?
   - [Here is a nice explanation of how OpenID connect works](https://yasasramanayaka.medium.com/openid-connect-authorization-code-flow-8c02081135fc).
   - The OpenID Connect flow is projected on the euroteq usecase [in this diagram](./openidconnect.md)
 - How do I do introspection?
-  - In Ccurl: `curl -k -u RS-Client-ID:RS-CLIENT-Secret -H 'Content-Type: application/x-www-form-urlencoded' -X POST --data 'token=eyJhbGciOiJFUzI1NiIsImtpZCI6Ik1sVm9jb...' https://proxy.prod.erasmus.eduteams.org/OIDC/introspect -q | jq`
+  - Using curl: `curl -k -u RS-Client-ID:RS-CLIENT-Secret -H 'Content-Type: application/x-www-form-urlencoded' -X POST --data 'token=eyJhbGciOiJFUzI1NiIsImtpZCI6Ik1sVm9jb...' https://proxy.prod.erasmus.eduteams.org/OIDC/introspect -q | jq`
   - Example Response:
    ```
    {
