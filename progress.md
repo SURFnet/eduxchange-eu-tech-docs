@@ -12,7 +12,7 @@
 | École Polytechnique Fédérale de Lausanne  |
 |                               |                                                |                                                                         |                                           |                                           |                         |                         |                         |
 
-## Current registrations:
+## Current registrations
 
 | Name | Clientid |
 | --- | --- |
