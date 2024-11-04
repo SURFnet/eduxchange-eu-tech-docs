@@ -1,0 +1,137 @@
+---
+logging:
+  level:
+    root: DEBUG
+    generiek: DEBUG
+
+server:
+  port: 8092  # change if docker setup is changed
+  error:
+    path: "/error"
+    include-message: always
+  servlet:
+    session:
+      tracking-modes: cookie
+      cookie:
+        secure: true
+
+spring:
+  jpa:
+    properties:
+      hibernate:
+        naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        # By default a filebased storage (H2) is used for storing
+        # access tokens. If the datasource is changed; also change the dialect.
+        dialect: org.hibernate.dialect.H2Dialect
+        # dialect: org.hibernate.dialect.PostgreSQL10Dialect
+    open-in-view: false
+  datasource:   #### <-- get from EWUU config
+    ## Default filebased storage
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:file:./database/student-mobility
+    ## For Postgress use :
+    # driver-class-name: org.postgresql.Driver
+    # url: jdbc:postgresql://localhost:5432/mobility
+    # username: mobility_rw
+    # password: secret
+    ## For mariadb use :
+    # driver-class-name: org.mariadb.jdbc.Driver
+    # url: jdbc:mariadb://localhost:3306/mobility
+    # username: mobility_rw
+    # password: secret
+  flyway:
+    locations: classpath:db/{vendor}/migration
+
+config:
+  connection_timeout_millis: 20_000
+  connection_pool_keep_alive_duration_millis: 300_000
+  # Set to 0 to disable connection-pooling. If responses are slow,
+  # connection-pooling does not matter anyway
+  connection_pool_max_idle_connections: 256
+
+features:
+  # Do we allow to mock the different scenario's - only allow on test
+  allow_playground: true
+  # Should an eduID identitier be required during authentication
+  # only true for the dutch eduxchange, false for euroteq
+  require_eduid: false   #### <-- get from EWUU config
+
+# URL of the broker-gui to redirect back after authentication and the
+# credentials of the broker-server to check against
+#
+# This broker will be integrated in eduxchange, but for now still
+# is a separate component.
+# user and secret should be changed and communicated with the eduxchange team
+broker:
+  url: "https://broker.test.eduxchange.eu/"
+  user: user
+  password: secret
+  service_registry_base_url: "https://broker.test.eduxchange.eu/"
+
+# Credentials of the student information system to
+# check against when reporting back results. These are the username and
+# password used by the student information system when calling the
+# generic component for updates
+sis:
+  user: sis    #### <-- get from EWUU config
+  password: secret    #### <-- get from EWUU config
+
+# Details on the student information system to call including credentials.
+# The url is where the initial enrollment information for the student
+# information system will be sent
+# The username and password are used when sending enrollment requests to the
+# student information system
+backend:
+  url: "http://localhost:8093/intake"   #### <-- get from EWUU config
+  api_user: user   #### <-- get from EWUU config
+  api_password: secret    #### <-- get from EWUU config
+
+oidc:
+  # Special authentication needs (like MFA) can be spefified here
+  # acr-context-class-ref: https://refeds.org/profile/mfa
+  #
+  # oidc-client id and secret received when connected to MyacademicID
+  client-id: APP-000000000-00000-0000-0000-0000000000    #### <-- get from Ben
+  client-secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx   #### <-- get from Ben
+  #
+  # The oidc redirect url. This should match the MyacademinID registration
+  redirect-uri: https://<your-hostname-for-this-component>/redirect_uri
+  #
+  # Don't edit these
+  authorization-uri: https://proxy.prod.erasmus.eduteams.org/OIDC/authorization
+  token-uri: https://proxy.prod.erasmus.eduteams.org/OIDC/token
+  jwk-set-uri: https://proxy.prod.erasmus.eduteams.org/OIDC/jwks
+  jwk:
+    # The HTTP connect timeout for JWK set retrieval, in millisecond
+    connect-timeout: 1500
+    # The HTTP read timeout for JWK set retrieval, in milliseconds
+    read-timeout: 1500
+    # The HTTP entity size limit for JWK set retrieval, in bytes
+    size-limit: 153_600
+
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include:
+          - health
+          - info
+      base-path: "/internal"
+  endpoint:
+    health:
+      enabled: true
+      show-details: when_authorized
+    info:
+      enabled: true
+  info:
+    git:
+      mode: full
+    defaults:
+      enabled: true
+
+# used by the git plugin
+info:
+  build:
+    artifact: "@project.artifactId@"
+    version: "@project.version@"
