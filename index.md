@@ -24,11 +24,11 @@
 For enrollment to work, an institution has to implement functionality to play two "roles":
 
 1. The Host Institution, where you receive incoming enrollment requests. The Host Institution sends several (OOAPI) requests (via the Enrollment Receiver) to the Home Institution of the student to:
-   a. Get personal information about the student.
-   b. Let the Home Instution know the students want to enroll at the Host Institution, giving the Home Institution a chance to allow or deny the enrollment.
-   c. Check whether a student is still "active" at the Home Institution, for example just before the course starts.
-   d. Inform the Home Insitution that the students has cancelled the enrollment.
-   e. Inform the Home Insitution of the result that student achieved when the course has finished.
+   - Get personal information about the student.
+   - Let the Home Instution know the students want to enroll at the Host Institution, giving the Home Institution a chance to allow or deny the enrollment.
+   - Check whether a student is still "active" at the Home Institution, for example just before the course starts.
+   - Inform the Home Insitution that the students has cancelled the enrollment.
+   - Inform the Home Insitution of the result that student achieved when the course has finished.
 2. The Home Insitution, who will receive OOAPI requests from the Host Institution and responds to them. In the responses, the Home Institution can inform the Host Institution about decisions regarding the enrollment of the student.
 
 In general, the Host Institution is in charge of the communication and will initiate requests. The Home Institution responds to those request.
