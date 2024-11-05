@@ -35,6 +35,32 @@ receiver and the custom implementation at the host institution?
   - [example application.yaml for enrollment receiver](./application.yaml)
 - How do I run the enrollment receiver?
   - It's advised to use the docker image [as described here](./running.md)
+- What is the response from the SIS to the enrolment receiver?
+  - After processing the enrolment request in the host institution, and
+  informing the home institution, the response should look like this:
+    ``` json
+    {
+      "result": "ok",
+      "code": 200,
+      "message": "Message to show to the student",
+      "oo-api-offering-id": "offeringId_value_here",
+      "redirect" : "https://optional.redirect/for-extra-information"
+    }
+    ```
+  For the `code` use these values:
+  Here's the data in a markdown table format:
+
+      | Value | Label                                      |
+      |-------|--------------------------------------------|
+      | 200   | 200 - All is good                          |
+      | 400   | 400 - Backend error                        |
+      | 404   | 404 - Person endpoint not found            |
+      | 409   | 409 - Queue-session validation failed      |
+      | 412   | 412 - Invalid enrollmentRequest            |
+      | 417   | 417 - Token request failed                 |
+      | 419   | 419 - eduID not present in the ARP         |
+      | 422   | 422 - Administrative error (already enrolled) |
+      | 500   | 500 - Not so good                          |
 
 ## About openID and MyAcedemicID
 
@@ -99,8 +125,6 @@ receiver and the custom implementation at the host institution?
   - du50.vc.cvut.cz/eq/resource/v5/results
   - technion.ac.il/persons
   - technion.ac.il/results
-  - polytechnique.edu/persons
-  - polytechnique.edu/results
 
   When receiving a token, the MyUniversity's API endpoint **must** validate if
   the scope is valid for the API being called.
