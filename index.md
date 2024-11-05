@@ -37,7 +37,7 @@ receiver and the custom implementation at the host institution?
   - It's advised to use the docker image [as described here](./running.md)
 - What is the response from the SIS to the enrolment receiver?
   - After processing the enrolment request in the host institution, and
-  informing the home institution, the response should look like this:
+  informing the home institution a response is returned to the enrollment receiver. The HTTP status code should always be 200, and the response should look like this:
     ``` json
     {
       "result": "ok",
@@ -48,7 +48,6 @@ receiver and the custom implementation at the host institution?
     }
     ```
   For the `code` use these values:
-  Here's the data in a markdown table format:
 
       | Value | Label                                      |
       |-------|--------------------------------------------|
