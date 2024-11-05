@@ -54,7 +54,7 @@ features:
   allow_playground: true
   # Should an eduID identitier be required during authentication
   # only true for the dutch eduxchange, false for euroteq
-  require_eduid: false   #### <-- get from EWUU config
+  require_eduid: false #### <-- change this to false
 
 # URL of the broker-gui to redirect back after authentication and the
 # credentials of the broker-server to check against
