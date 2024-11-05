@@ -50,7 +50,8 @@ receiver and the custom implementation at the host institution?
 - What is the response from the SIS to the enrollment receiver?
   - After processing the enrollment request in the host institution, and
   informing the home institution a response is returned to the enrollment receiver. The HTTP status code should always be 200, and the response should look like this:
-    ``` json
+
+    ```json
     {
       "result": "ok",
       "code": 200,
@@ -59,6 +60,7 @@ receiver and the custom implementation at the host institution?
       "redirect" : "https://optional.redirect/for-extra-information"
     }
     ```
+
   For the `code` use these values:
 
       | Value | Label                                      |
