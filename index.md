@@ -19,24 +19,36 @@
 - How can I enable the edubroker for my offerings on the frontend?
   - Currently, when a student clicks on a enrollment button in eduxchange.eu, the student is sent to a form or an email. To enable the broker for your offerings, SURF has to change a setting for you. Ask SURF if you want to activate the broker for your offerings.
 
-## About Enrolment
+## About Enrollment
 
-- How does the enrolment work in general?
-  - [Sequence diagram for EuroTeQ enrolment](./sequence-diagram.md)
+For enrollment to work, an institution has to implement functionality to play two "roles":
+
+1. The Host Institution, where you receive incoming enrollment requests. The Host Institution sends several (OOAPI) requests (via the Enrollment Receiver) to the Home Institution of the student to:
+   a. Get personal information about the student.
+   b. Let the Home Instution know the students want to enroll at the Host Institution, giving the Home Institution a chance to allow or deny the enrollment.
+   c. Check whether a student is still "active" at the Home Institution, for example just before the course starts.
+   d. Inform the Home Insitution that the students has cancelled the enrollment.
+   e. Inform the Home Insitution of the result that student achieved when the course has finished.
+2. The Home Insitution, who will receive OOAPI requests from the Host Institution and responds to them. In the responses, the Home Institution can inform the Host Institution about decisions regarding the enrollment of the student.
+
+In general, the Host Institution is in charge of the communication and will initiate requests. The Home Institution responds to those request.
+
+- How does the enrollment work in general?
+  - [Sequence diagram for EuroTeQ enrollment](./sequence-diagram.md)
 - What are the possible initial states of an association?
   - [Flowchart of the association states](./association-states.md)
 
-## About the enrolment receiver
+## About the enrollment receiver
 
 - Can you tell me more about the communication between the generic part of the enrollment
 receiver and the custom implementation at the host institution?
   - [Communication dataformat](./dataformat.md)
-- Do you have an example configuration of the enrolment receiver?
+- Do you have an example configuration of the enrollment receiver?
   - [example application.yaml for enrollment receiver](./application.yaml)
 - How do I run the enrollment receiver?
   - It's advised to use the docker image [as described here](./running.md)
-- What is the response from the SIS to the enrolment receiver?
-  - After processing the enrolment request in the host institution, and
+- What is the response from the SIS to the enrollment receiver?
+  - After processing the enrollment request in the host institution, and
   informing the home institution a response is returned to the enrollment receiver. The HTTP status code should always be 200, and the response should look like this:
     ``` json
     {
