@@ -52,8 +52,8 @@ Once the Host instutution has done the initial processing after the Enrollment R
 ```json
 {
   "role": "student",
-  "state": "associated", # The desired state the Host would like the Home institution to reach.
-  "remoteState": "associated", # The initial state the Host has reached so far. Could also be pending or queued.
+  "state": "associated", // The desired state the Host would like the Home institution to reach.
+  "remoteState": "associated", // The initial state the Host has reached so far. Could also be pending or queued.
   "offering": {
     "primaryCode": {
       "codeType": "identifier",
@@ -109,7 +109,7 @@ Once the Host instutution has done the initial processing after the Enrollment R
       "link": "https://institution.tld/courses/bioinf",
     }
   },
-  "issuer": { # The issuer should be an Organization of type root. It represents the institution that is offering the course (offering).
+  "issuer": { // The issuer should be an Organization of type root. It represents the institution that is offering the course (offering).
     "primaryCode": {
       "codeType": "identifier",
       "code": "1234qwe12"
