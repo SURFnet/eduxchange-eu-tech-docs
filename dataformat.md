@@ -46,7 +46,7 @@ To validate a student is still active at the home institution, the backend can s
 
 ## Sending Results
 
-The backend can send the guest-users' results to the home institution by POST'ing an OOAPI association object to the `/api/results` endpoint of the subscription receiver. It will add the necessary authentication, and forward the request to the home institution. It will use the `personId` in the association object to find the correct oauth token for the user.
+The backend can send the users' results to the home institution by POST'ing an OOAPI association object to the `/api/results` endpoint of the subscription receiver. It will add the necessary authentication, and forward the request to the home institution. It will use the `personId` in the association object to find the correct oauth token for the user.
 
 Also read the informaion about [Consumers and Profiles](https://openonderwijsapi.nl/#/technical/consumers-and-profiles/eduxchange)
 

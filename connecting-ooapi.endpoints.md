@@ -10,7 +10,7 @@ Eduxchange utilizes OOAPI for the following processes:
 
 1. **Retrieving information about educational offerings** to display on [eduxchange.nl](http://eduxchange.nl/) or eduxchange.eu.
 2. **Enrolling students** in educational offerings.
-3. **Transmitting students' grades** from the guest institution back to the home institution.
+3. **Transmitting students' grades** from the host institution back to the home institution.
 
 ## Implementation Guidelines
 
