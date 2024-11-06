@@ -61,19 +61,23 @@ receiver and the custom implementation at the host institution?
     }
     ```
 
-  For the `code` use these values:
+    For the `code` use these values:
 
-      | Value | Label                                      |
-      |-------|--------------------------------------------|
-      | 200   | 200 - All is good                          |
-      | 400   | 400 - Backend error                        |
-      | 404   | 404 - Person endpoint not found            |
-      | 409   | 409 - Queue-session validation failed      |
-      | 412   | 412 - Invalid enrollmentRequest            |
-      | 417   | 417 - Token request failed                 |
-      | 419   | 419 - eduID not present in the ARP         |
-      | 422   | 422 - Administrative error (already enrolled) |
-      | 500   | 500 - Not so good                          |
+        | Value | Label                                      |
+        |-------|--------------------------------------------|
+        | 200   | 200 - All is good                          |
+        | 400   | 400 - Backend error                        |
+        | 404   | 404 - Person endpoint not found            |
+        | 409   | 409 - Queue-session validation failed      |
+        | 412   | 412 - Invalid enrollmentRequest            |
+        | 417   | 417 - Token request failed                 |
+        | 419   | 419 - eduID not present in the ARP         |
+        | 422   | 422 - Administrative error (already enrolled) |
+        | 500   | 500 - Not so good                          |
+
+    If a value is present for `redirect`, the user will be asked to provide extra
+    information. A butten will be shown sending the user to the form in a new
+    window. Leave out this field if no extra form is required.
 
 ## About openID and MyAcedemicID
 
