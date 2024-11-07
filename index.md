@@ -103,6 +103,10 @@ receiver and the custom implementation at the host institution?
     information. A butten will be shown sending the user to the form in a new
     window. Leave out this field if no extra form is required.
 
+    If enrollment is denied for any reason, use HTTP code 200 and 'code' 400 in
+    the json message. Mention the reason for denying in the `message` field.
+    This message will be shown to the end user directly, so be short and clear.
+
 ## About openID and MyAcedemicID
 
 - What are the url's for starting authentication/introspection/tokens at MyAcedemicID?
