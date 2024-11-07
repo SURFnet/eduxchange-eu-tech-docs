@@ -1,5 +1,17 @@
 # This is a FAQ
 
+## Overview
+
+[![Overview](/images/overview.drawio.png)](/images/overview.drawio.png)
+
+For enabeling automated enrolment in a aliance, each institutions will play the
+role of the home institition (sending students out) en the host institution
+(receiving students).
+The home institution must have the required OOAPI endpoints available.
+The host institution will run a component called enrollment receiver for
+authentication and authorisation.
+The host institution will always be in the lead for communication.
+
 ## About OOAPI
 
 - [How to connect OOAPI endpoints?](./connecting-ooapi.endpoints.md)
@@ -52,13 +64,13 @@ Once the Host instutution has done the initial processing after the Enrollment R
 
 ## About the enrollment receiver
 
+- How do I install or the enrollment receiver?
+  - It's advised to use the docker image [as described here](./running.md)
 - Can you tell me more about the communication between the generic part of the enrollment
 receiver and the custom implementation at the host institution?
   - [Communication dataformat](./dataformat.md)
 - Do you have an example configuration of the enrollment receiver?
   - [example application.yaml for enrollment receiver](./application.yaml)
-- How do I run the enrollment receiver?
-  - It's advised to use the docker image [as described here](./running.md)
 - What is the response from the SIS to the enrollment receiver?
   - After processing the enrollment request in the host institution, and
   informing the home institution a response is returned to the enrollment receiver. The HTTP status code should always be 200, and the response should look like this:
