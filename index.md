@@ -2,15 +2,17 @@
 
 ## Overview
 
-[![Overview](/images/overview.drawio.png)](/images/overview.drawio.png)
-
-For enabeling automated enrolment in a aliance, each institutions will play the
+To enable automated enrolment in an aliance, each institutions will play the
 role of the home institition (sending students out) en the host institution
 (receiving students).
 The home institution must have the required OOAPI endpoints available.
 The host institution will run a component called enrollment receiver for
 authentication and authorisation.
 The host institution will always be in the lead for communication.
+
+[![Overview](/images/overview.drawio.png)](/images/overview.drawio.png)
+
+
 
 ## About OOAPI
 
@@ -22,7 +24,7 @@ The host institution will always be in the lead for communication.
   - POST /associations/external/me
   - GET /associations/{associationId}
   - PATCH /associations/{associationId}
-  
+
     These endpoints will be protected using oauth tokens.
 
 ## About the broker
