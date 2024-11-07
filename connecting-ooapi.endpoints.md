@@ -21,7 +21,7 @@ Eduxchange utilizes OOAPI for the following processes:
 
 Eduxchange utilizes a subset of the OOAPI specification. The specific parts that need to be implemented are detailed in the Eduxchange profile \[LINK\].
 
-## Steps to Implement an OOAPI Endpoint
+## Steps to Implement the required OOAPI Endpoint
 
 - Some institutions may already have an OOAPI endpoint for other use cases. If so, a significant portion of the work might already be completed.
 
