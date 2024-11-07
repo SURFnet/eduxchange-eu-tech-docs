@@ -10,6 +10,7 @@
   - POST /associations/external/me
   - GET /associations/{associationId}
   - PATCH /associations/{associationId}
+  
     These endpoints will be protected using oauth tokens.
 
 ## About the broker
