@@ -18,7 +18,7 @@
 - What is the edubroker?
   - The edubroker is a component hosted by SURF that initiates the enrollment-process for a student. The broker provides a visual interface with feedback for the student.
 - How can I enable the edubroker for my offerings on the frontend?
-  - Currently, when a student clicks on a enrollment button in eduxchange.eu, the student is sent to a form or an email. To enable the broker for your offerings, SURF has to change a setting for you. Ask SURF if you want to activate the broker for your offerings.
+  - Currently, when a student clicks on a enrollment button in eduxchange.eu, the student is sent to a form or an email. After installing the enrollmengt receiver and connecting it to your SIS it can be enabled in the catalog. To enable the broker for your offerings, SURF has to change a setting for you. Ask SURF if you want to activate the broker for your offerings.
 
 ## About Enrollment
 
