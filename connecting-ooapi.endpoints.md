@@ -38,5 +38,6 @@ Eduxchange utilizes a subset of the OOAPI specification. The specific parts that
   - This step requires that you study the OOAPI standard and Eduxchange profile and compare them to the datamodels of your institutions' systems.
 - Create a REST API that adheres to the [OOAPI standard](https://openonderwijsapi.nl/specification/v5/docs.html) and the Eduxchange profile \[LINK\] on your system(s).
 
-  - This step will usually involve development work requiring some time of a programmer.
+  - This step will usually involve development work requiring some time of a programmer. Skills required will include REST API, OpenID connect and general
+    knowledge of student information systems
 - You can [validate your endpoint using our validator](https://wiki.surfnet.nl/display/EDX/Step+4.+Validating+your+OOAPI+endpoint).
