@@ -38,6 +38,96 @@ In general, the Host Institution is in charge of the communication and will init
 - What are the possible initial states of an association?
   - [Flowchart of the association states](./association-states.md)
 
+### A note on the `POST /associations/external/me` call
+
+Once the Host instutution has done the initial processing after the Enrollment Request starts, the Host should do a `POST /associations/external/me` request to the Home institution (via the enrollment receiver). The purpose of this call is to provide the Home Institution with enough information to make an informed decision about the enrollment request of the student. Therefore it should include information about:
+
+- The association
+- The offering the student is requesting to be enrolled in
+- An expanded course attribute in the offering
+- An issuer, e.g. information about the Host Institution
+
+ An example for the body of this request:
+
+```json
+{
+  "role": "student",
+  "state": "associated", // The desired state the Host would like the Home institution to reach.
+  "remoteState": "associated", // The initial state the Host has reached so far. Could also be pending or queued.
+  "offering": {
+    "primaryCode": {
+      "codeType": "identifier",
+      "code": "1234qwe12"
+    },
+    "offeringType": "course",
+    "name": [
+      {
+        "language": "en-GB",
+        "value": "Introduction to Bio-Informatics - fall 2024"
+      }
+    ],
+    "abbreviation": "INTROBIOINF2024",
+    "description": [
+      {
+        "language": "en-GB",
+        "value": "Intro text"
+      }
+    ],
+    "teachingLanguage": "eng",
+    "resultExpected": true,
+    "resultValueType": "1-10",
+    "link": "https://institution.tld/courses/bioinf/2024",
+    "startDate": "2024-10-15",
+    "endDate": "2024-11-16",
+    "enrollStartDate": "2024-01-24",
+    "enrollEndDate": "2024-08-29",
+    "course": {
+      "courseId": "123e4567-e89b-12d3-a456-426614174000",
+      "primaryCode": {
+        "codeType": "identifier",
+        "code": "1234qwe12"
+      },
+      "name": [
+        {
+          "language": "en-GB",
+          "value": "Introduction to Bio-Informatics"
+        }
+      ],
+      "abbreviation": "INTROBIOINF",
+      "studyLoad": {
+        "studyLoadUnit": "ects",
+        "value": 3
+      },
+      "description": [
+        {
+          "language": "en-GB",
+          "value": "Description text"
+        }
+      ],
+      "teachingLanguage": "eng",
+      "level": "master",
+      "link": "https://institution.tld/courses/bioinf",
+    }
+  },
+  "issuer": { // The issuer should be an Organization of type root. It represents the institution that is offering the course (offering).
+    "primaryCode": {
+      "codeType": "identifier",
+      "code": "1234qwe12"
+    },
+    "organizationType": "root",
+    "name": [
+      {
+        "language": "en-GB",
+        "value": "The University"
+      }
+    ],
+    "shortName": "UNI",
+    "link": "https://institution.tld",
+    "logo": "https://institution.tld/logo.svg"
+  }
+}
+```
+
 ## About the enrollment receiver
 
 - Can you tell me more about the communication between the generic part of the enrollment
