@@ -6,7 +6,7 @@ The HOST and HOME institutions each have their own business logic rules they can
 
 btw: states can change later.
 
-![Association States](./images/inschrijven-gastinstelling-EN.drawio.png)
+[![Association States](./images/inschrijven-gastinstelling-EN.drawio.png)](./images/inschrijven-gastinstelling-EN.drawio.png)
 
 ## Explanation of rules governing the association state (Home Institution)
 
