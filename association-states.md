@@ -8,7 +8,7 @@ btw: states can change later.
 
 ![Association States](./images/inschrijven-gastinstelling-EN.drawio.png)
 
-## Explanation of rules governing the association state
+## Explanation of rules governing the association state (Home Institution)
 
 - pending (proces is waiting on the status of the students home institution)
 - associated (the student is enrolled in the learning activity)
@@ -16,7 +16,7 @@ btw: states can change later.
 - denied (either learning activity is stopped or student is not allowed)
 - queued (student is put on a waiting list)
 
-## Explanation of rules governing the association remoteState
+## Explanation of rules governing the association remoteState (Host Institution)
 
 - pending (proces is waiting on the status of the students home institution)
 - associated (the student is enrolled in the learning activity)
