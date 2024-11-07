@@ -12,8 +12,6 @@ The host institution will always be in the lead for communication.
 
 [![Overview](/images/overview.drawio.png)](/images/overview.drawio.png)
 
-
-
 ## About OOAPI
 
 - [How to connect OOAPI endpoints?](./connecting-ooapi.endpoints.md)
