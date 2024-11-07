@@ -3,7 +3,7 @@
 ## Overview
 
 To enable automated enrolment in an aliance, each institutions will play the
-role of the home institition (sending students out) en the host institution
+role of the home institition (sending students out) and the host institution
 (receiving students).
 The home institution must have the required OOAPI endpoints available.
 The host institution will run a component called enrollment receiver for
