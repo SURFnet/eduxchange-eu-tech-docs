@@ -17,9 +17,9 @@ Eduxchange utilizes OOAPI for the following processes:
 - **Gradual Implementation:** Not all required parts of the API need to be implemented simultaneously.
 - **Initial Step:** Begin by implementing the necessary parts of the OOAPI to showcase educational offerings on Eduxchange.
 - **Subsequent Enhancements:** Later, you can extend your endpoint to include additional features such as enrollment and grade transmission support.
-- **Go Live:** You can only join teh production enviroment after all steps have been completed and all institutions are on the same level.
+- **Go Live:** You can only join the production enviroment after all steps have been completed and all institutions are on the same level.
 
-Eduxchange utilizes a subset of the OOAPI specification. The specific parts that need to be implemented are detailed in the Eduxchange profile \[LINK\].
+Eduxchange utilizes a subset of the OOAPI specification. The specific parts that need to be implemented are detailed in the [Eduxchange profile](https://openonderwijsapi.nl/#/technical/consumers-and-profiles/eduxchange).
 
 ## Steps to Implement the required OOAPI Endpoint
 
