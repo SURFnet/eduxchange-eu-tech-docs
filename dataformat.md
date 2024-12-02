@@ -14,7 +14,7 @@ running at the host institution
 ## First request (enrollment start)
 
 After authentication and retrieving the person-data from the home institution,
-a combination of an offering and a person is sent to the `/api/start`
+a combination of an offering-object and a person-object is sent to the configured
 endpoint of the backend.
 [An example of this message can be found here](https://github.com/SURFnet/student-mobility-inteken-ontvanger-email/blob/main/src/test/resources/data/requestV5.json).
 The `personId` in the data should be used for getting updated
