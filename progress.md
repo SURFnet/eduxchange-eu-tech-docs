@@ -1,4 +1,5 @@
 # Progress
+
 |                                       | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 | :---------------------------------------- | :------------------------: | :---------------------------: | :--------------------------------------------: | :---------------------------------------------------------------------: | :---------------------------------------: | :---------------------------------------: | :---------------------: | :---------------------: | ----------------------: | ----------------------: |
 | Name                                      | Broker enabled in frontend | Enrollment Receiver installed | Enrollment Receiver  Connected to MyAcademicID | endpoints available persons/me associations/external/me  /associations/ | Connection information in ServiceRegistry | OOAPI endpoints connected to MyacademicID | Test accounts available | Tested incoming student | Tested outgoing student | Receiver <-> Backend communication |
