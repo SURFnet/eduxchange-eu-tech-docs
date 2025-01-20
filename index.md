@@ -60,7 +60,7 @@ Once the Host instutution has done the initial processing after the Enrollment R
 - An expanded course attribute in the offering
 - An issuer, e.g. information about the Host Institution
 
- [An example for the body of this request](./assiciationexample.md)
+ [An example for the body of this request](./associationexample.md)
 
 ## About the enrollment receiver
 
