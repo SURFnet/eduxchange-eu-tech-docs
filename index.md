@@ -16,10 +16,10 @@ The host institution will always be in the lead for communication.
 
 - [How to connect OOAPI endpoints?](./connecting-ooapi.endpoints.md)
 - What OOAPI endpoints are needed for enrollment?
-  - GET /persons/me
-  - POST /associations/external/me
-  - GET /associations/{associationId}
-  - PATCH /associations/{associationId}
+  - [GET /persons/me](https://openonderwijsapi.nl/specification/v5/docs.html#tag/persons/paths/~1persons~1me/get)
+  - [POST /associations/external/me](https://openonderwijsapi.nl/specification/v5/docs.html#tag/associations/paths/~1associations~1external~1me/post)
+  - [GET /associations/{associationId}](https://openonderwijsapi.nl/specification/v5/docs.html#tag/associations/paths/~1associations~1%7BassociationId%7D/get)
+  - [PATCH /associations/{associationId}](https://openonderwijsapi.nl/specification/v5/docs.html#tag/associations/paths/~1associations~1%7BassociationId%7D/patch)
 
     These endpoints will be protected using [oauth tokens](./openidconnect.md).
 - Where can I find an example of protecting my API (`/persons/` `/associations/`) using oauth/MyAcademicID?
