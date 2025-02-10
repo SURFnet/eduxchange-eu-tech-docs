@@ -10,7 +10,7 @@ The host institution will run a component called enrollment receiver for
 authentication and authorisation.
 The host institution will always be in the lead for communication.
 
-[![Overview](/images/overview.drawio.png)](/images/overview.drawio.png)
+[![eduxchange Overview](/images/overview1.drawio.png)](/images/overview1.drawio.png) [![enrollment Overview](/images/overview.drawio.png)](/images/overview.drawio.png)
 
 ## About OOAPI
 
