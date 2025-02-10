@@ -12,6 +12,20 @@
 | Czech Technical University in Prague 🏆   | ✅                              | ✅                                 | ✅                                                  | ✅                                                                           | ✅                                             | ✅                                             | ✅                           | ✅                           | ✅                           |                                        |                                               |
 | École Polytechnique Fédérale de Lausanne  | ✅                              |                                   |                                                    |                                                                             |                                               |                                               |                             |                             |                             |                                        |                                               |
 
+## Catalog connections
+
+| Name                                      | slug     | SURFeduhub endpoint id               | OOAPI Base url                                         |
+| ----------------------------------------- | -------- | ------------------------------------ | ------------------------------------------------------ |
+| École Polytechnique                       | lx       | endpoint01.sandbox.polytechnique.edu | https://ooapi-test.telecom-paris.fr/api/               |
+| Eindhoven University of Technology        | tue      | endpoint01.sandbox.tue.nl            | https://tueacc-surf.osiris-link.nl/ooapi/v5            |
+| Technion - Israel Institute of Technology | technion | endpoint01.sandbox.technion.ac.il    | https://students.technion.ac.il/local/euroteq/ooapi/v5 |
+| Technical University of Denmark           | dtu      | endpoint01.sandbox.dtu.dk            | https://test.ooapi.ait.dtu.dk/get                      |
+| Tallinn University of Technology          | taltech  | endpoint01.sandbox.taltech.ee        | https://mars.taltech.ee/test/euroteq/api/v5            |
+| École Polytechnique Fédérale de Lausanne  | epfl     | endpoint01.sandbox.epfl.ch           | https://cede-webapps.epfl.ch/ooapi                     |
+| Czech Technical University in Prague      | ctu      | endpoint01.sandbox.cvut.cz           | https://du50.vc.cvut.cz/eq/resource/v5/                |
+| Technical University of Munich            | tum      | endpoint01.sandbox.tum.de            | https://129.187.125.25/QSYSTEM_TUM/co/euroteq/api      |
+| Demo Institute 1                          | demo01   | demoinst01.eduxchange.eu             | https://demo04.test.surfeduhub.nl                      |
+
 ## Current registrations
 
 | Name                   | Clientid                                 |
