@@ -142,5 +142,70 @@
          ]
       }
    }
+   "issuer": {
+    "primaryCode": {
+      "codeType": "identifier",
+      "code": "1234qwe12"
+    },
+    "organizationType": "root",
+    "name": [
+      {
+        "language": "nl-NL",
+        "value": "Coöperatie SURF U.A."
+      }
+    ],
+    "shortName": "SURF",
+    "description": [
+      {
+        "language": "nl-NL",
+        "value": "SURF is een coöperatieve vereniging van Nederlandse onderwijs- en onderzoeksinstellingen waarin de leden hun krachten bundelen. De leden zijn eigenaar van SURF."
+      }
+    ],
+    "addresses": [
+      {
+        "addressType": "postal",
+        "street": "Moreelsepark",
+        "streetNumber": "48",
+        "additional": [
+          {
+            "language": "en-GB",
+            "value": "On the other side of the road"
+          }
+        ],
+        "postalCode": "3511 EP",
+        "city": "Utrecht",
+        "countryCode": "NL",
+        "geolocation": {
+          "latitude": 52.089123,
+          "longitude": 5.113337
+        },
+        "ext": {}
+      }
+    ],
+    "link": "https://surf.nl",
+    "logo": "https://www.surf.nl/themes/surf/logo.svg",
+    "otherCodes": [
+      {
+        "codeType": "brin",
+        "code": "00AA"
+      },
+      {
+        "codeType": "kvk",
+        "code": "12345678"
+      }
+    ],
+    "parent": "42e2bc1b-6741-4e2e-b138-97b4a342c999",
+    "children": [
+      "497f6eca-6276-4993-bfeb-53cbbbba6f08"
+    ],
+    "consumers": [
+      {
+        "consumerKey": "x-test-consumer",
+        "additional": "custom",
+        "attributes": "here"
+      }
+    ],
+    "ext": {}
+  }
 }
 ```
