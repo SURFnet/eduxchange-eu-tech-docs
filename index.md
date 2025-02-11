@@ -47,7 +47,7 @@ For enrollment to work, an institution has to implement functionality to play tw
 In general, the Host Institution is in charge of the communication and will initiate requests. The Home Institution responds to those request.
 
 - How does the enrollment work in general?
-  - [Sequence diagram for EuroTeQ enrollment](./sequence-diagram.md)
+  - [Flow of EuroTeQ enrollment](./flow.md)
 - What are the possible initial states of an association?
   - [Flowchart of the association states](./association-states.md)
 
