@@ -3,7 +3,7 @@
 On this page you'll find overviews of the enrolment flow.
 
 ## High(er) level overview
-![Enrollment Sequence](./images/eduxchange-enrolment-flow.png)
+[![Enrollment Sequence](./images/eduxchange-enrolment-flow.png)](./images/eduxchange-enrolment-flow.png)
 
 ## Sequence diagram
 This is the detailed sequence diagram for EuroTeQ enrolment:
