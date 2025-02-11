@@ -170,7 +170,9 @@ receiver and the custom implementation at the host institution?
   - du50.vc.cvut.cz/eq/resource/v5/results
   - technion.ac.il/persons
   - technion.ac.il/results
-
+  - tueacc-surf.osiris-link.nl/persons
+  - tueacc-surf.osiris-link.nl/results
+  
   When receiving a token, the MyUniversity's API endpoint **must** validate if
   the scope is valid for the API being called.
 
@@ -200,7 +202,7 @@ introspection?
      "aud": [
        "APP-02BDEC4A-6B0D-4488-8932-4E92A8A80F71"
      ],
-     "email": "user.edmail@institution.tld"
+     "email": "user.email@institution.tld"
    }
    ```
 
