@@ -36,8 +36,8 @@
 | Technion OOAPI (RS)    | APP-E0E90AD9-2F41-4D52-ACBA-0EDC628D3BB6 |
 | CTU receiver (RP)      | APP-4D5BE672-9F40-4968-96A0-EA2B23778517 |
 | CTU OOAPI (RS)         | APP-752753D0-F4DB-4C12-B900-541D162028E1 |
-| TU/e receiver (RP)     |                                          |
-| TU/e OOAPI (RS)        |                                          |
+| TU/e receiver (RP)     | APP-B992AC7B-0517-442A-9BCC-257B09E582CE |
+| TU/e OOAPI (RS)        | APP-A4CEE0F1-5BBD-42AE-95C8-E4D48B6D3DD5 |
 
 [Click here](https://github.com/SURFnet/eduxchange-eu-tech-docs/edit/main/progress.md)
 to edit this page
