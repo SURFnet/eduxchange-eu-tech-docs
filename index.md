@@ -30,7 +30,8 @@ ___
   - [GET /associations/{associationId}](https://openonderwijsapi.nl/specification/v5/docs.html#tag/associations/paths/~1associations~1%7BassociationId%7D/get)
   - [PATCH /associations/{associationId}](https://openonderwijsapi.nl/specification/v5/docs.html#tag/associations/paths/~1associations~1%7BassociationId%7D/patch)
 
-    These endpoints will be protected using [oauth tokens](./openidconnect.md).
+These endpoints will be protected using [oauth tokens](./openidconnect.md).
+
 - Where can I find an example of protecting my API (`/persons/` `/associations/`) using oauth/MyAcademicID?
   - [Mock implementation of a home institution](https://github.com/SURFnet/student-mobility-home-institution-mock)
 
