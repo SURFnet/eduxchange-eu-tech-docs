@@ -2,15 +2,15 @@
 
 ## Overview
 
-To enable automated enrolment in an aliance, each institutions will play the
-role of the home institition (sending students out) and the host institution
+To enable automated enrolment in an alliance, each institutions will play the
+role of the home institution (sending students out) and the host institution
 (receiving students).
 The home institution must have the required OOAPI endpoints available.
 The host institution will run a component called enrollment receiver for
-authentication and authorisation.
+authentication and authorization.
 The host institution will always be in the lead for communication.
 
-[![eduxchange Overview](/images/overview1.drawio.png)](/images/overview1.drawio.png)
+[![eduXchange Overview](/images/overview1.drawio.png)](/images/overview1.drawio.png)
 ___
 [![enrollment Overview](/images/overview.drawio.png)](/images/overview.drawio.png)
 
@@ -31,7 +31,6 @@ ___
   - [PATCH /associations/{associationId}](https://openonderwijsapi.nl/specification/v5/docs.html#tag/associations/paths/~1associations~1%7BassociationId%7D/patch)
 
 These endpoints will be protected using [oauth tokens](./openidconnect.md).
-
 - Where can I find an example of protecting my API (`/persons/` `/associations/`) using oauth/MyAcademicID?
   - [Mock implementation of a home institution](https://github.com/SURFnet/student-mobility-home-institution-mock)
 
@@ -48,11 +47,11 @@ For enrollment to work, an institution has to implement functionality to play tw
 
 1. The Host Institution, where you receive incoming enrollment requests. The Host Institution sends several (OOAPI) requests (via the Enrollment Receiver) to the Home Institution of the student to:
    - Get personal information about the student.
-   - Let the Home Instution know the students want to enroll at the Host Institution, giving the Home Institution a chance to allow or deny the enrollment.
+   - Let the Home Institution know the students want to enroll at the Host Institution, giving the Home Institution a chance to allow or deny the enrollment.
    - Check whether a student is still "active" at the Home Institution, for example just before the course starts.
-   - Inform the Home Insitution that the students has cancelled the enrollment.
-   - Inform the Home Insitution of the result that student achieved when the course has finished.
-2. The Home Insitution, who will receive OOAPI requests from the Host Institution and responds to them. In the responses, the Home Institution can inform the Host Institution about decisions regarding the enrollment of the student.
+   - Inform the Home Institution that the students has cancelled the enrollment.
+   - Inform the Home Institution of the result that student achieved when the course has finished.
+2. The Home Institution, who will receive OOAPI requests from the Host Institution and responds to them. In the responses, the Home Institution can inform the Host Institution about decisions regarding the enrollment of the student.
 
 In general, the Host Institution is in charge of the communication and will initiate requests. The Home Institution responds to those request.
 
@@ -69,14 +68,22 @@ This call is used to provide the Host institution the personal information of th
 
 #### `POST /associations/external/me`
 
-Once the Host instutution has done the initial processing after the Enrollment Request starts, the Host should do a `POST /associations/external/me` request to the Home institution (via the enrollment receiver). The purpose of this call is to provide the Home Institution with enough information to make an informed decision about the enrollment request of the student. Therefore it should include information about:
+Once the Host institution has done the initial processing after the Enrollment Request starts, the Host should do a `POST /associations/external/me` request to the Home institution (via the enrollment receiver). The purpose of this call is to provide the Home Institution with enough information to make an informed decision about the enrollment request of the student. Therefore it should include information about:
 
 - The association
 - The offering the student is requesting to be enrolled in
 - An expanded course attribute in the offering
 - An issuer, e.g. information about the Host Institution
 
- [An example for the body of this request](./associationexample.md)
+##### `state` and `remoteState`
+
+The `state` and `remoteState` fields are used to communicate about the enrolment state between the two institutions. Because OOAPI is based on the REST paradigm, it describes resources being manipulated on the server. For the `POST /associations/external/me` call this has the following consequences: 
+
+- The `remoteState` field contains the initial state of the **Host institution**. The logic for this is as follows: the Host institution is sending a request to the Home institution to create an association. From the perspective of the Home institution, the state of the Host is the `remoteState`.
+- The `state` field is mandatory in OOAPI. However, during when sending the initial `POST`, the Host cannot know what the `state` of the Home will be. Therefore the state should just be set to `associated` but it doesn't have a real meaning at this stage.
+- The Home institution will respond to the request with their initial `state` in the HTTP response.
+
+[An example for the body of this request](./associationexample.md)
 
 #### `PATCH /associations/{associationId}`
 
@@ -85,9 +92,11 @@ With this call the Host institution can inform the Home institution about any up
 1. If the Host institution communicated a `pending` or `queued` state to the Home institution during the initial enrolment flow, the Host has to update Home institution when the state progresses to `associated` or `denied`.
 2. If the student cancels the enrolment (for example using some out-of-band process, like sending an email to the student administration of the Host institution), the Host should inform the Home by communicating the `canceled` state.
 
+To update the Home institution, the Host institution should use the `remoteState` field in the `PATCH` request.
+
 #### `GET /associations/{associationId}`
 
-With this call the Host institution can request the current associationState from the Home institution. This is needed when the Home institution returned a `pending` state during the initial enrolment flow. The Host institution should then poll the Home institution (for example using a cron job) to check whether the Home instutution has reached a new state.
+With this call the Host institution can request the current associationState from the Home institution. This is needed when the Home institution returned a `pending` state during the initial enrolment flow. The Host institution should then poll the Home institution (for example using a cron job) to check whether the Home institution has reached a new state.
 
 In the response to this call, only required fields are necessary:
 
@@ -134,7 +143,7 @@ receiver and the custom implementation at the host institution?
       | 500   | 500 - Not so good                          |
 
     If a value is present for `redirect`, the user will be asked to provide extra
-    information. A butten will be shown sending the user to the form in a new
+    information. A button will be shown sending the user to the form in a new
     window. Leave out this field if no extra form is required.
 
     If enrollment is denied for any reason, use HTTP code 200 and 'code' 400 in
@@ -143,11 +152,11 @@ receiver and the custom implementation at the host institution?
 
 ## About openID and MyAcedemicID
 
-- What are the url's for starting authentication/introspection/tokens at MyAcedemicID?
-  - The MyAcademidID endpoints for openID can be found in the
+- What are the url's for starting authentication/introspection/tokens at MyAcademicID?
+  - The MyAcademicID endpoints for openID can be found in the
   [well-known](https://proxy.prod.erasmus.eduteams.org/.well-known/openid-configuration)
   location. Please use a widely used library for all openID parts, instead
-  of builing it.
+  of building it.
 - How can we start an enrollment for testing?
   - There is a [demo enrollment broker](https://broker.test.eduxchange.eu/)
   available for testing.
@@ -188,24 +197,24 @@ receiver and the custom implementation at the host institution?
   - `persons`: Personal Information
   - `results`: Enrollment and results
 
-  To make the scope identifier unique, the institutiond primary domain is added.
+  To make the scope identifier unique, the institution's primary domain is added.
   So to request access to the personal data of a student of MyUniversity, the
   scope `institution.tld/persons` is requested.
 
   Currently, these scopes are known for EutoTeQ institutions:
 
-  - demoinst01.eduxchange.eu/persons
-  - demoinst01.eduxchange.eu/results
-  - demoinst02.eduxchange.eu/persons
-  - demoinst02.eduxchange.eu/results
-  - taltech.ee/persons
-  - taltech.ee/results
-  - du50.vc.cvut.cz/eq/resource/v5/persons
-  - du50.vc.cvut.cz/eq/resource/v5/results
-  - technion.ac.il/persons
-  - technion.ac.il/results
-  - tueacc-surf.osiris-link.nl/persons
-  - tueacc-surf.osiris-link.nl/results
+  - `demoinst01.eduxchange.eu/persons`
+  - `demoinst01.eduxchange.eu/results`
+  - `demoinst02.eduxchange.eu/persons`
+  - `demoinst02.eduxchange.eu/results`
+  - `taltech.ee/persons`
+  - `taltech.ee/results`
+  - `du50.vc.cvut.cz/eq/resource/v5/persons`
+  - `du50.vc.cvut.cz/eq/resource/v5/results`
+  - `technion.ac.il/persons`
+  - `technion.ac.il/results`
+  - `tueacc-surf.osiris-link.nl/persons`
+  - `tueacc-surf.osiris-link.nl/results`
   
   When receiving a token, the MyUniversity's API endpoint **must** validate if
   the scope is valid for the API being called.
@@ -213,12 +222,12 @@ receiver and the custom implementation at the host institution?
 - How do I connect to MyAcademicID?
   - The enrollment receiver needs to be connected as a relying party to
   MyAcademicID. The API server needs to be connected as a Resource Server.
-  Both can be registered by [filling in the myacademic id registration form](./registration.md)
+  Both can be registered by [filling in the MyAcademicId registration form](./registration.md)
 
 - How does this OpenID connect Oauth thing work? What is the flow for token
 introspection?
   - [Here is a nice explanation of how OpenID connect works](https://yasasramanayaka.medium.com/openid-connect-authorization-code-flow-8c02081135fc).
-  - The OpenID Connect flow is projected on the euroteq usecase [in this diagram](./openidconnect.md)
+  - The OpenID Connect flow is projected on the EuroTeQ usecase [in this diagram](./openidconnect.md)
 - How do I do introspection?
   - Example using curl: `curl -k -u RS-Client-ID:RS-CLIENT-Secret -H 'Content-Type: application/x-www-form-urlencoded' -X POST --data 'token=eyJhbGciOiJFUzI1NiIsImtpZCI6Ik1sVm9jb...' https://proxy.prod.erasmus.eduteams.org/OIDC/introspect -q | jq`
   - Example Response:

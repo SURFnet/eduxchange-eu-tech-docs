@@ -10,7 +10,7 @@ btw: states can change later.
 
 ## Explanation of rules governing the association state (Home Institution)
 
-- pending (proces is waiting on the status of the students home institution)
+- pending (process is waiting on the status of the students home institution)
 - associated (the student is approved for the learning activity)
 - canceled (by student)
 - denied (either learning activity is stopped or student is not allowed)
@@ -18,7 +18,7 @@ btw: states can change later.
 
 ## Explanation of rules governing the association remoteState (Host Institution)
 
-- pending (proces is waiting on the status of the students home institution)
+- pending (process is waiting on the status of the students home institution)
 - associated (the student is approved in the learning activity)
 - canceled (by student)
 - denied (student is not allowed)

@@ -3,7 +3,7 @@
 ## Relying Party (RP)
 
 The Generic part of the Enrollment Receiver handles authentication and OIDC
-tokens. It should be registerd at the MyAcademicID Service.
+tokens. It should be registered at the MyAcademicID Service.
 
 1. Go to [the registration form](https://webapp.prod.erasmus.eduteams.org/sp_request)
 and log in using your institutional account.
@@ -22,12 +22,12 @@ for the privacy policy.
 ![service details](./images/registration/3.png)
 
 5. Under `Technical Information`, select `Authorization Code Flow` and
-`Refresh Token`. Enter the redirect url as the domein name where the enrollment
+`Refresh Token`. Enter the redirect url as the domain name where the enrollment
 receiver can be reached, and add `/redirect_uri/`.
 
 ![Technical Information](./images/registration/4.png)
 
-6. Add a comment in  the `Additional information` mentioning this is a euroteq
+6. Add a comment in  the `Additional information` mentioning this is a EuroTeQ
 service.
 7. Submit the form. You will receive a confirmation email
 
@@ -38,4 +38,4 @@ using [the same form](https://webapp.prod.erasmus.eduteams.org/sp_request) and
 information.
 
 Add a comment to the `Additional information` field te indicate this is a
-_resource server_, connected to the Euroteq services.
+_resource server_, connected to the EuroTeQ services.
