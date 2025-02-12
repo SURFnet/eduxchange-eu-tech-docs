@@ -17,6 +17,13 @@ ___
 ## About OOAPI
 
 - [How to connect OOAPI endpoints?](./connecting-ooapi.endpoints.md)
+- Which OOAPI endpoints are needed to fill the catalog?
+  - [GET /organizations](https://openonderwijsapi.nl/specification/v5/docs.html#tag/organizations/paths/~1organizations/get)
+  - [GET /organizations?organizationType=root](https://openonderwijsapi.nl/specification/v5/docs.html#tag/organizations/paths/~1organizations/get)
+  - [GET /courses](https://openonderwijsapi.nl/specification/v5/docs.html#tag/courses/paths/~1courses/get)
+  - [GET /courses/{courseId}?expand=coordinator](https://openonderwijsapi.nl/specification/v5/docs.html#tag/courses/paths/~1courses~1%7BcourseId%7D/get)
+  - [GET /courses/{courseId}/offerings](https://openonderwijsapi.nl/specification/v5/docs.html#tag/courses/paths/~1courses~1%7BcourseId%7D~1offerings/get)
+  - [GET /offerings/{offeringId}?expand=academicSession](https://openonderwijsapi.nl/specification/v5/docs.html#tag/offerings/paths/~1offerings~1%7BofferingId%7D/get)
 - What OOAPI endpoints are needed for enrollment?
   - [GET /persons/me](https://openonderwijsapi.nl/specification/v5/docs.html#tag/persons/paths/~1persons~1me/get)
   - [POST /associations/external/me](https://openonderwijsapi.nl/specification/v5/docs.html#tag/associations/paths/~1associations~1external~1me/post)
@@ -53,7 +60,13 @@ In general, the Host Institution is in charge of the communication and will init
 - What are the possible initial states of an association?
   - [Flowchart of the association states](./association-states.md)
 
-### A note on the `POST /associations/external/me` call
+### Extra notes about the API calls needed for the enrolment flow
+
+#### `GET /persons/me`
+
+This call is used to provide the Host institution the personal information of the student that wants to enrol. Of special note is the `activeEnrollment` field. This boolean should indicate whether the students is an "active student" at the Home institution. This could mean different things in different countries, but might include checks like: has the student payed their tuition, or does the student have an active enrolment in a bachelor or master programme?
+
+#### `POST /associations/external/me`
 
 Once the Host instutution has done the initial processing after the Enrollment Request starts, the Host should do a `POST /associations/external/me` request to the Home institution (via the enrollment receiver). The purpose of this call is to provide the Home Institution with enough information to make an informed decision about the enrollment request of the student. Therefore it should include information about:
 
@@ -63,6 +76,24 @@ Once the Host instutution has done the initial processing after the Enrollment R
 - An issuer, e.g. information about the Host Institution
 
  [An example for the body of this request](./associationexample.md)
+
+#### `PATCH /associations/{associationId}`
+
+With this call the Host institution can inform the Home institution about any updates to its associationState. There are several reasons why this is needed:
+
+1. If the Host institution communicated a `pending` or `queued` state to the Home institution during the initial enrolment flow, the Host has to update Home institution when the state progresses to `associated` or `denied`.
+2. If the student cancels the enrolment (for example using some out-of-band process, like sending an email to the student administration of the Host institution), the Host should inform the Home by communicating the `canceled` state.
+
+#### `GET /associations/{associationId}`
+
+With this call the Host institution can request the current associationState from the Home institution. This is needed when the Home institution returned a `pending` state during the initial enrolment flow. The Host institution should then poll the Home institution (for example using a cron job) to check whether the Home instutution has reached a new state.
+
+In the response to this call, only required fields are necessary:
+
+- `associationId`
+- `associationType`
+- `role`
+- `state`
 
 ## About the enrollment receiver
 
