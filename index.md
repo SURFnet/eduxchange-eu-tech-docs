@@ -10,9 +10,13 @@ The host institution will run a component called enrollment receiver for
 authentication and authorization.
 The host institution will always be in the lead for communication.
 
+### Overview of orientation and enrollment
+
 [![eduXchange Overview](/images/overview1.drawio.png)](/images/overview1.drawio.png)
 
 ___
+
+### Zoomed in on enrollment
 
 [![enrollment Overview](/images/overview.drawio.png)](/images/overview.drawio.png)
 
