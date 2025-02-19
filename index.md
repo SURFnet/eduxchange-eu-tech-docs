@@ -11,7 +11,9 @@ authentication and authorization.
 The host institution will always be in the lead for communication.
 
 [![eduXchange Overview](/images/overview1.drawio.png)](/images/overview1.drawio.png)
+
 ___
+
 [![enrollment Overview](/images/overview.drawio.png)](/images/overview.drawio.png)
 
 ## About OOAPI
