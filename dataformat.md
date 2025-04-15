@@ -18,7 +18,19 @@ a combination of an offering-object and a person-object is POST'ed to the
 configured endpoint of the backend.
 [An example of this message can be found here](https://github.com/SURFnet/student-mobility-inteken-ontvanger-email/blob/main/src/test/resources/data/requestV5.json).
 The `personId` in the data should be used for getting updated
-person information later and informing the home institution..
+person information later.
+
+Basic Authentication is used for this call, as defined in 
+[the enrollment receiver's application.yml](https://github.com/SURFnet/student-mobility-inteken-ontvanger-generiek/blob/main/src/main/resources/application.yml) 
+as
+
+```
+# Details on which custom inteken implementation to call including credentials
+backend:
+  url: "http://localhost:8093/intake"
+  api_user: user
+  api_password: secret
+```
 
 ## Informing home-institution of an enrollment
 
