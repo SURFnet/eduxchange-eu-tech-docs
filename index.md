@@ -37,6 +37,7 @@ ___
   - [PATCH /associations/{associationId}](https://openonderwijsapi.nl/specification/v5/docs.html#tag/associations/paths/~1associations~1%7BassociationId%7D/patch)
 
 These endpoints will be protected using [oauth tokens](./openidconnect.md).
+
 - Where can I find an example of protecting my API (`/persons/` `/associations/`) using oauth/MyAcademicID?
   - [Mock implementation of a home institution](https://github.com/SURFnet/student-mobility-home-institution-mock)
 
@@ -83,7 +84,7 @@ Once the Host institution has done the initial processing after the Enrollment R
 
 ##### `state` and `remoteState`
 
-The `state` and `remoteState` fields are used to communicate about the enrolment state between the two institutions. Because OOAPI is based on the REST paradigm, it describes resources being manipulated on the server. For the `POST /associations/external/me` call this has the following consequences: 
+The `state` and `remoteState` fields are used to communicate about the enrolment state between the two institutions. Because OOAPI is based on the REST paradigm, it describes resources being manipulated on the server. For the `POST /associations/external/me` call this has the following consequences:
 
 - The `remoteState` field contains the initial state of the **Host institution**. The logic for this is as follows: the Host institution is sending a request to the Home institution to create an association. From the perspective of the Home institution, the state of the Host is the `remoteState`.
 - The `state` field is mandatory in OOAPI. However, during when sending the initial `POST`, the Host cannot know what the `state` of the Home will be. Therefore the state should just be set to `associated` but it doesn't have a real meaning at this stage.
