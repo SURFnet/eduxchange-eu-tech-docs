@@ -225,6 +225,12 @@ receiver and the custom implementation at the host institution?
   
   When receiving a token, the MyUniversity's API endpoint **must** validate if
   the scope is valid for the API being called.
+  
+  The scopes are passed to the intekenontvanger-generiek from the broker. The Intekenontvanger-generiek will handle the authentication and add the necessary scopes. The scopes for each institution are configured in the service registry. 
+
+  If the scopes are not configured for your resource server (OOAPI endpoint) mail them to `support@myacademicid.org` to have them added.
+
+  You will only receive the `email` claim, `schac_personal_unique_id` is not available yet.
 
 - How do I connect to MyAcademicID?
   - The enrollment receiver needs to be connected as a relying party to
