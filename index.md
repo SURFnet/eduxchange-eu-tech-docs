@@ -1,4 +1,4 @@
-# This is a FAQ
+# Technical documentation
 
 ## Overview
 
