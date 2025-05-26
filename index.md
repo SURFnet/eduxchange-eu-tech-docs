@@ -222,7 +222,7 @@ receiver and the custom implementation at the host institution?
   - `technion.ac.il/results`
   - `tueacc-surf.osiris-link.nl/persons`
   - `tueacc-surf.osiris-link.nl/results`
-  
+
   When receiving a token, the MyUniversity's API endpoint **must** validate if
   the scope is valid for the API being called.
   
