@@ -10,6 +10,8 @@
 
 ## Overview
 
+This documentation focusses on the enrollment process after orientation of a student and a click on the `register` button. For more information about the orientation proces, please check [the eduxchange profile](https://openonderwijsapi.nl/#/technical/consumers-and-profiles/eduxchange).
+
 To enable automated enrolment in an alliance, each institutions will play the
 role of the home institution (sending students out) and the host institution
 (receiving students).
@@ -31,13 +33,6 @@ ___
 ## About OOAPI
 
 - [How to connect OOAPI endpoints?](./connecting-ooapi.endpoints.md)
-- Which OOAPI endpoints are needed to fill the catalog?
-  - [GET /organizations](https://openonderwijsapi.nl/specification/v5/docs.html#tag/organizations/paths/~1organizations/get)
-  - [GET /organizations?organizationType=root](https://openonderwijsapi.nl/specification/v5/docs.html#tag/organizations/paths/~1organizations/get)
-  - [GET /courses](https://openonderwijsapi.nl/specification/v5/docs.html#tag/courses/paths/~1courses/get)
-  - [GET /courses/{courseId}?expand=coordinator](https://openonderwijsapi.nl/specification/v5/docs.html#tag/courses/paths/~1courses~1%7BcourseId%7D/get)
-  - [GET /courses/{courseId}/offerings](https://openonderwijsapi.nl/specification/v5/docs.html#tag/courses/paths/~1courses~1%7BcourseId%7D~1offerings/get)
-  - [GET /offerings/{offeringId}?expand=academicSession](https://openonderwijsapi.nl/specification/v5/docs.html#tag/offerings/paths/~1offerings~1%7BofferingId%7D/get)
 - What OOAPI endpoints are needed for enrollment?
   - [GET /persons/me](https://openonderwijsapi.nl/specification/v5/docs.html#tag/persons/paths/~1persons~1me/get)
   - [POST /associations/external/me](https://openonderwijsapi.nl/specification/v5/docs.html#tag/associations/paths/~1associations~1external~1me/post)
