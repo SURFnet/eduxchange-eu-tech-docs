@@ -1,5 +1,13 @@
 # Technical documentation
 
+[Overview](#overview)\
+[About OOAPI](#about-ooapi)\
+[About the broker](#about-the-broker)\
+[About enrollment](#about-enrollment)\
+[About the enrollment receiver](#about-the-enrollment-receiver)\
+[About openID and MyAcedemicID](#about-openid-and-myacedemicid)\
+[And more...](#and-more)
+
 ## Overview
 
 To enable automated enrolment in an alliance, each institutions will play the
@@ -48,7 +56,7 @@ These endpoints will be protected using [oauth tokens](./openidconnect.md).
 - How can I enable the edubroker for my offerings on the frontend?
   - Currently, when a student clicks on a enrollment button in eduxchange.eu, the student is sent to a form or an email. After installing the enrollmengt receiver and connecting it to your SIS it can be enabled in the catalog. To enable the broker for your offerings, SURF has to change a setting for you. Ask SURF if you want to activate the broker for your offerings.
 
-## About Enrollment
+## About enrollment
 
 For enrollment to work, an institution has to implement functionality to play two "roles":
 
@@ -265,12 +273,14 @@ introspection?
   - In the response validate `"active": true` and the scopes for your institution are present. In the example `institution.tld/persons` and `institution.tld/results`
   - Use the email to look up your user
 
-## Testing
+## And more...
+
+### Testing
 
 - How can I test the registration flow?
   - [See the page on testing](./testing.md)
 
-## Status
+### Status
 
 - Where can I see what has to be done, and what has already been done by
 all institutions?
