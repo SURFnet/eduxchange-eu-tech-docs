@@ -80,18 +80,18 @@ This call is used to provide the Host institution with the personal information 
 
 person
 - personId
-- primaryCode
+- primaryCode, local identifier
   - { codeType=ANY, code=ANY }
 - givenName
 - surname
 - displayName
-- activeEnrollment
+- activeEnrollment, This means something that determines if the student is currently active at their home university. I.e. have they paid their fees, are they on a current programme, etc. Either `true` or `false`.
 - nationality
-- affiliations
+- affiliations, almost always `student`.
 - mail
 - gender
 - otherCodes
-  - [{ codeType=schacHome, code="SCHACHOME" }]
+  - [{ codeType=`schacHome`, code="SCHACHOME" }]
 
 ##### Unique person identification
 
@@ -140,7 +140,7 @@ association
 
 association.offering
 - primaryCode 
-  - { codeType=offeringCode, code=offeringId }
+  - { codeType=`offeringCode`, code=offeringId }
 - offeringType
 - name
 - description
@@ -151,7 +151,7 @@ association.offering
 
 association.offering.course
 - primaryCode
-  - { codeType=offeringCode, code=offeringId }
+  - { codeType=`courseCode`, code=courseId }
 - name
 - abbreviation
 - description
@@ -160,10 +160,12 @@ association.offering.course
 
 association.issuer
 - primaryCode
-  - { codeType=schacHome, code="SCHACHOME" }
+  - { codeType=`schacHome`, code="SCHACHOME" }
 - organizationType
 - name 
 - shortName
+
+Note: `courseCode` is not a valid codeType in OOAPI, but it is actually missing in the spec.
 
 ##### `state` and `remoteState`
 
