@@ -76,6 +76,23 @@ In general, the Host Institution is in charge of the communication and will init
 
 This call is used to provide the Host institution with the personal information of the student that wants to enrol. Of special note is the `activeEnrollment` field. This boolean should indicate whether the students is an "active student" at the Home institution. This could mean different things in different countries, but might include checks like: has the student payed their tuition, or does the student have an active enrolment in a bachelor or master programme?
 
+##### Minimal required attributes
+
+person
+- personId
+- primaryCode
+  - { codeType=ANY, code=ANY }
+- givenName
+- surname
+- displayName
+- activeEnrollment
+- nationality
+- affiliations
+- mail
+- gender
+- otherCodes
+  - [{ codeType=schacHome, code="SCHACHOME" }]
+
 ##### Unique person identification
 
 The /persons/me call needs to have a unique person identification to facilitate deduplication.
@@ -114,6 +131,40 @@ Once the Host institution has done the initial processing after the Enrollment R
 - An expanded course attribute in the offering
 - An issuer, e.g. information about the Host Institution
 
+##### Minimal required attributes
+
+association
+- role
+- state
+- remoteState
+
+association.offering
+- primaryCode 
+  - { codeType=offeringCode, code=offeringId }
+- offeringType
+- name
+- description
+- teachingLanguage
+- resultExpected
+- startDate
+- endDate
+
+association.offering.course
+- primaryCode
+  - { codeType=offeringCode, code=offeringId }
+- name
+- abbreviation
+- description
+- teachingLanguage
+- level
+
+association.issuer
+- primaryCode
+  - { codeType=schacHome, code="SCHACHOME" }
+- organizationType
+- name 
+- shortName
+
 ##### `state` and `remoteState`
 
 The `state` and `remoteState` fields are used to communicate about the enrolment state between the two institutions. Because OOAPI is based on the REST paradigm, it describes resources being manipulated on the server. For the `POST /associations/external/me` call this has the following consequences:
@@ -124,17 +175,15 @@ The `state` and `remoteState` fields are used to communicate about the enrolment
 
 ##### Issuer
 
-To set the issuer of the /associations/external/me request one of the `otherCodes` field could be used in the body. All institutions should use the same `codeType`, for example schacHome.
+To set the issuer of the /associations/external/me request the `primaryCode` field should be used in the body. All institutions should use the same `codeType`, for example schacHome.
 
 ```json
 {
   "issuer": {
-    "otherCodes": [
-      {
+    "primaryCode": {
         "codeType": "schacHome",
         "code": "dtu.dk"
-      }
-    ],
+    },
     ...
   }
   ...
