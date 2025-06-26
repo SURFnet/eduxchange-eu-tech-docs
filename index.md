@@ -5,7 +5,7 @@
 [About the broker](#about-the-broker)\
 [About enrollment](#about-enrollment)\
 [About the enrollment receiver](#about-the-enrollment-receiver)\
-[About openID and MyAcedemicID](#about-openid-and-myacedemicid)\
+[About openID and MyAcademicID](#about-openid-and-myacademicid)\
 [And more](#and-more)
 
 ## Overview
@@ -76,6 +76,20 @@ In general, the Host Institution is in charge of the communication and will init
 
 This call is used to provide the Host institution the personal information of the student that wants to enrol. Of special note is the `activeEnrollment` field. This boolean should indicate whether the students is an "active student" at the Home institution. This could mean different things in different countries, but might include checks like: has the student payed their tuition, or does the student have an active enrolment in a bachelor or master programme?
 
+To get the issuer of the /persons/me response one of the `otherCodes` field could be used. All institutions should use the same `codeType`, for example schacHome.
+
+```json
+{
+  "otherCodes": [
+    {
+      "codeType": "schacHome",
+      "code": "dtu.dk"
+    }
+  ],
+  ...
+}
+```
+
 #### `POST /associations/external/me`
 
 Once the Host institution has done the initial processing after the Enrollment Request starts, the Host should do a `POST /associations/external/me` request to the Home institution (via the enrollment receiver). The purpose of this call is to provide the Home Institution with enough information to make an informed decision about the enrollment request of the student. Therefore it should include information about:
@@ -93,7 +107,24 @@ The `state` and `remoteState` fields are used to communicate about the enrolment
 - The `state` field is mandatory in OOAPI. However, during when sending the initial `POST`, the Host cannot know what the `state` of the Home will be. Therefore the state should just be set to `associated` but it doesn't have a real meaning at this stage.
 - The Home institution will respond to the request with their initial `state` in the HTTP response.
 
-[An example for the body of this request](./associationexample.md)
+To set the issuer of the /associations/external/me request one of the `otherCodes` field could be used in the body. All institutions should use the same `codeType`, for example schacHome.
+
+```json
+{
+  "issuer": {
+    "otherCodes": [
+      {
+        "codeType": "schacHome",
+        "code": "dtu.dk"
+      }
+    ],
+    ...
+  }
+  ...
+}
+```
+
+[View a full example for the body of this request](./associationexample.md)
 
 #### `PATCH /associations/{associationId}`
 
@@ -160,7 +191,7 @@ receiver and the custom implementation at the host institution?
     the json message. Mention the reason for denying in the `message` field.
     This message will be shown to the end user directly, so be short and clear.
 
-## About openID and MyAcedemicID
+## About openID and MyAcademicID
 
 - What are the url's for starting authentication/introspection/tokens at MyAcademicID?
   - The MyAcademicID endpoints for openID can be found in the
