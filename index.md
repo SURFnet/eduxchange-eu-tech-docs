@@ -76,6 +76,8 @@ In general, the Host Institution is in charge of the communication and will init
 
 This call is used to provide the Host institution the personal information of the student that wants to enrol. Of special note is the `activeEnrollment` field. This boolean should indicate whether the students is an "active student" at the Home institution. This could mean different things in different countries, but might include checks like: has the student payed their tuition, or does the student have an active enrolment in a bachelor or master programme?
 
+##### issuer
+
 To get the issuer of the /persons/me response one of the `otherCodes` field could be used. All institutions should use the same `codeType`, for example schacHome.
 
 ```json
@@ -106,6 +108,8 @@ The `state` and `remoteState` fields are used to communicate about the enrolment
 - The `remoteState` field contains the initial state of the **Host institution**. The logic for this is as follows: the Host institution is sending a request to the Home institution to create an association. From the perspective of the Home institution, the state of the Host is the `remoteState`.
 - The `state` field is mandatory in OOAPI. However, during when sending the initial `POST`, the Host cannot know what the `state` of the Home will be. Therefore the state should just be set to `associated` but it doesn't have a real meaning at this stage.
 - The Home institution will respond to the request with their initial `state` in the HTTP response.
+
+##### issuer
 
 To set the issuer of the /associations/external/me request one of the `otherCodes` field could be used in the body. All institutions should use the same `codeType`, for example schacHome.
 
