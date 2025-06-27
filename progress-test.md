@@ -41,5 +41,5 @@
 | Demo receiver (RP)     | APP-02BDEC4A-6B0D-4488-8932-4E92A8A80F71 |
 | Demo OOAPI (RS)        | APP-759F9219-C50B-4DEF-8FF7-5AE2F1469C41 |
 
-[Click here](https://github.com/SURFnet/eduxchange-eu-tech-docs/edit/main/progress.md)
+[Click here](https://github.com/SURFnet/eduxchange-eu-tech-docs/edit/main/progres-test.md)
 to edit this page

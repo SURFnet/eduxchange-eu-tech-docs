@@ -383,4 +383,5 @@ introspection?
 
 - Where can I see what has to be done, and what has already been done by
 all institutions?
-  - [See the status page here](./progress.md)
+  - [Testing : See the status page here](./progress-test.md)
+  - [Production : See the status page here](./progress-prod.md)
