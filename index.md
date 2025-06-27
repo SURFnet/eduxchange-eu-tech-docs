@@ -170,7 +170,7 @@ association.issuer
 - name
 - shortName
 
-Note: `courseCode` is  missing in the OOAPI spec and should be added there.
+Note: `courseCode` is  missing in the OOAPI spec and should be added there in the future.
 
 ##### `state` and `remoteState`
 
