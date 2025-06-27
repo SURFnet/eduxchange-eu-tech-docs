@@ -76,9 +76,10 @@ In general, the Host Institution is in charge of the communication and will init
 
 This call is used to provide the Host institution with the personal information of the student that wants to enrol. Of special note is the `activeEnrollment` field. This boolean should indicate whether the students is an "active student" at the Home institution. This could mean different things in different countries, but might include checks like: has the student payed their tuition, or does the student have an active enrolment in a bachelor or master programme?
 
-##### Minimal required attributes
+##### Minimal required attributes for persons
 
 person
+
 - personId
 - primaryCode, local identifier
   - { codeType=ANY, code=ANY }
@@ -106,7 +107,7 @@ Within the alliance the personId can be used for this.
 }
 ```
 
-##### Issuer
+##### Issuer persons
 
 To get the issuer of the /persons/me response one of the `otherCodes` field could be used. All institutions should use the same `codeType`, for example schacHome.
 
@@ -131,15 +132,17 @@ Once the Host institution has done the initial processing after the Enrollment R
 - An expanded course attribute in the offering
 - An issuer, e.g. information about the Host Institution
 
-##### Minimal required attributes
+##### Minimal required attributes for associations
 
 association
+
 - role
 - state
 - remoteState
 
 association.offering
-- primaryCode 
+
+- primaryCode
   - { codeType=`offeringCode`, code=offeringId }
 - offeringType
 - name
@@ -150,6 +153,7 @@ association.offering
 - endDate
 
 association.offering.course
+
 - primaryCode
   - { codeType=`courseCode`, code=courseId }
 - name
@@ -159,13 +163,14 @@ association.offering.course
 - level
 
 association.issuer
+
 - primaryCode
   - { codeType=`schacHome`, code="SCHACHOME" }
 - organizationType
-- name 
+- name
 - shortName
 
-Note: `courseCode` is not a valid codeType in OOAPI, but it is actually missing in the spec.
+Note: `courseCode` is  missing in the OOAPI spec and should be added there.
 
 ##### `state` and `remoteState`
 
@@ -175,7 +180,7 @@ The `state` and `remoteState` fields are used to communicate about the enrolment
 - The `state` field is mandatory in OOAPI. However, during when sending the initial `POST`, the Host cannot know what the `state` of the Home will be. Therefore the state should just be set to `associated` but it doesn't have a real meaning at this stage.
 - The Home institution will respond to the request with their initial `state` in the HTTP response.
 
-##### Issuer
+##### Issuer associations
 
 To set the issuer of the /associations/external/me request the `primaryCode` field should be used in the body. All institutions should use the same `codeType`, for example schacHome.
 
