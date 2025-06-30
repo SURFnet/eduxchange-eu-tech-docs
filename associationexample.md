@@ -11,8 +11,8 @@
    "remoteState": "associated", // The initial state the Host has reached so far. Could also be pending or queued.
    "offering": { // The offering the student is trying to enroll on
       "primaryCode": {
-         "codeType": "identifier",
-         "code": "1234qwe12"
+         "codeType": "offeringCode",
+         "code": "123e4567-e89b-12d3-a456-426614174000"
       },
       "offeringType": "course",
       "name": [
@@ -37,10 +37,9 @@
       "enrollStartDate": "2024-01-24",
       "enrollEndDate": "2024-08-29",
       "course": { // more information about the course this offering is for
-         "courseId": "123e4567-e89b-12d3-a456-426614174000",
          "primaryCode": {
-            "codeType": "identifier",
-            "code": "1234qwe12"
+            "codeType": "courseCode",
+            "code": "123e4567-e89b-12d3-a456-426614174000"
          },
          "name": [
             {
@@ -66,8 +65,8 @@
    },
    "issuer": { // The issuer should be an Organization of type root. It represents the institution that is offering the course (offering).
       "primaryCode": {
-         "codeType": "identifier",
-         "code": "1234qwe12"
+         "codeType": "schacHome",
+         "code": "surf.nl"
       },
       "organizationType": "root",
       "name": [
@@ -106,36 +105,6 @@
       ],
       "link": "https://surf.nl",
       "logo": "https://www.surf.nl/themes/surf/logo.svg",
-      "otherCodes": [
-         {
-            "codeType": "brin", // Put here your unique identifier to distinguish the issuers, could be SchacHome for EU
-            "code": "00AA"
-         },
-         {
-            "codeType": "kvk",
-            "code": "12345678"
-         }
-      ],
-      "parent": "42e2bc1b-6741-4e2e-b138-97b4a342c999",
-      "children": [
-         "497f6eca-6276-4993-bfeb-53cbbbba6f08"
-      ],
-      "consumers": [
-         {
-            "consumerKey": "x-test-consumer",
-            "additional": "custom",
-            "attributes": "here"
-         }
-      ],
-      "ext": {}
-   },
-   "consumers": [
-      {
-         "consumerKey": "x-test-consumer",
-         "additional": "custom",
-         "attributes": "here"
-      }
-   ],
-   "ext": {}
+   }
 }
 ```
