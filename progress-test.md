@@ -1,21 +1,21 @@
 # Progress
 
-| |1|2|3|4|5|6|7|8|9|10|11|
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|**Name**|**Broker enabled in frontend**|**Enrollment Receiver installed**|**Enrollment Receiver Connected to MyAcademicID**|**endpoints available persons/me associations/external/me /associations/**|**Connection information in ServiceRegistry**|**OOAPI endpoints connected to MyacademicID**|**Test accounts available**|**Tested incoming student**|**Tested outgoing student**|**Receiver <-> Backend communication**|**OOAPI endpoints <-> Backend communication**|
-|Technical University of Denmark|✅|✅|✅|✅|✅|✅|✅|✅|✅|✅|✅|
-|École Polytechnique|✅|✅|✅|✅|✅|✅|✅|✅|✅||||
-|Technion - Israel Institute of Technology|✅|✅|✅|✅|✅|✅|✅|✅|✅|✅|✅|
-|Eindhoven University of Technology|✅|✅|✅|✅|✅|✅|✅|✅|✅|✅|✅|
-|Technical University of Munich|✅|||||||||||
-|Tallinn University of Technology |✅|✅|✅|✅|✅|✅|✅|✅|✅||✅|
-|Czech Technical University in Prague |✅|✅|✅|✅|✅|✅|✅|✅|✅|||
-|École Polytechnique Fédérale de Lausanne|✅|||||||||||
+|                                           | 1                              | 2                                 | 3                                                 | 4                                                                          | 5                                             | 6                                             | 7                           | 8                           | 9                           | 10                                     | 11                                            |
+|:----------------------------------------- |:------------------------------:|:---------------------------------:|:-------------------------------------------------:|:--------------------------------------------------------------------------:|:---------------------------------------------:|:---------------------------------------------:|:---------------------------:|:---------------------------:|:---------------------------:|:--------------------------------------:|:---------------------------------------------:|
+| **Name**                                  | **Broker enabled in frontend** | **Enrollment Receiver installed** | **Enrollment Receiver Connected to MyAcademicID** | **endpoints available persons/me associations/external/me /associations/** | **Connection information in ServiceRegistry** | **OOAPI endpoints connected to MyacademicID** | **Test accounts available** | **Tested incoming student** | **Tested outgoing student** | **Receiver <-> Backend communication** | **OOAPI endpoints <-> Backend communication** |
+| Technical University of Denmark           | ✅                              | ✅                                 | ✅                                                 | ✅                                                                          | ✅                                             | ✅                                             | ✅                           | ✅                           | ✅                           | ✅                                      | ✅                                             |
+| École Polytechnique                       | ✅                              | ✅                                 | ✅                                                 | ✅                                                                          | ✅                                             | ✅                                             | ✅                           | ✅                           | ✅                           |                                        |                                               |
+| Technion - Israel Institute of Technology | ✅                              | ✅                                 | ✅                                                 | ✅                                                                          | ✅                                             | ✅                                             | ✅                           | ✅                           | ✅                           | ✅                                      | ✅                                             |
+| Eindhoven University of Technology        | ✅                              | ✅                                 | ✅                                                 | ✅                                                                          | ✅                                             | ✅                                             | ✅                           | ✅                           | ✅                           | ✅                                      | ✅                                             |
+| Technical University of Munich            | ✅                              |                                   |                                                   |                                                                            |                                               |                                               |                             |                             |                             |                                        |                                               |
+| Tallinn University of Technology          | ✅                              | ✅                                 | ✅                                                 | ✅                                                                          | ✅                                             | ✅                                             | ✅                           | ✅                           | ✅                           |                                        | ✅                                             |
+| Czech Technical University in Prague      | ✅                              | ✅                                 | ✅                                                 | ✅                                                                          | ✅                                             | ✅                                             | ✅                           | ✅                           | ✅                           |                                        |                                               |
+| École Polytechnique Fédérale de Lausanne  | ✅                              |                                   |                                                   |                                                                            |                                               |                                               |                             |                             |                             |                                        |                                               |
 
 ## Catalog connections
 
-| Name                                      | slug     | SURFeduhub endpoint id               | OOAPI Base url                                         |
-| ----------------------------------------- | -------- | ------------------------------------ | ------------------------------------------------------ |
+| Name                                      | slug     | SURFeduhub endpoint id               | OOAPI Base url                                           |
+| ----------------------------------------- | -------- | ------------------------------------ | -------------------------------------------------------- |
 | École Polytechnique                       | lx       | endpoint01.sandbox.polytechnique.edu | `https://ooapi-test.telecom-paris.fr/api/`               |
 | Eindhoven University of Technology        | tue      | endpoint01.sandbox.tue.nl            | `https://tueacc-surf.osiris-link.nl/ooapi/v5`            |
 | Technion - Israel Institute of Technology | technion | endpoint01.sandbox.technion.ac.il    | `https://students.technion.ac.il/local/euroteq/ooapi/v5` |
@@ -40,6 +40,9 @@
 | TU/e OOAPI (RS)        | APP-A4CEE0F1-5BBD-42AE-95C8-E4D48B6D3DD5 |
 | Demo receiver (RP)     | APP-02BDEC4A-6B0D-4488-8932-4E92A8A80F71 |
 | Demo OOAPI (RS)        | APP-759F9219-C50B-4DEF-8FF7-5AE2F1469C41 |
+| DTU                    |                                          |
+| DTU OOAPI (RS)         |                                          |
+|                        |                                          |
 
 [Click here](https://github.com/SURFnet/eduxchange-eu-tech-docs/edit/main/progres-test.md)
 to edit this page
