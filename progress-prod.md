@@ -42,7 +42,7 @@
 | Demo OOAPI (RS)        |                                          |
 | L'X receiver (RP)      | APP-58D1A08C-BAFF-471D-B0E3-EA0E6930441C |
 | L'x OOAPI (RS)         | APP-9513F637-654B-45C5-88DE-40085C766D27 |
-| DTU receiver (RP)      |                                          |
+| DTU receiver (RP)      | APP-1CDA121E-3794-4C20-BC6C-30219462BA1E |
 | DTU OOAPI (RS)         |                                          |
 
 [Click here](https://github.com/SURFnet/eduxchange-eu-tech-docs/edit/main/progress-prod.md)
