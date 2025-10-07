@@ -41,7 +41,7 @@
 | Demo receiver (RP)     | APP-02BDEC4A-6B0D-4488-8932-4E92A8A80F71 |
 | Demo OOAPI (RS)        | APP-759F9219-C50B-4DEF-8FF7-5AE2F1469C41 |
 | DTU receiver (RP)      | APP-4B7B73D2-EC74-4F2D-B264-9BCCCBE69514 |
-| DTU OOAPI (RS)         |                                          |
+| DTU OOAPI (RS)         | APP-E982099D-7AD9-43B0-A10D-BEAEF40AA763 |
 |                        |                                          |
 
 [Click here](https://github.com/SURFnet/eduxchange-eu-tech-docs/edit/main/progres-test.md)
