@@ -10,7 +10,7 @@
 | Technical University of Munich            | Yes, on acc.eduxchange.eu      |                                   |                                                   |                                                                            |                                               |                                               |                             |                             |                             |                                        |                                               |
 | Technical University of Denmark           | Yes, on acc.eduxchange.eu      |                                   |                                                   |                                                                            |                                               |                                               |                             |                             |                             |                                        |                                               |
 | Czech Technical University in Prague      | Yes, on acc.eduxchange.eu      |                                   |                                                   |                                                                            |                                               |                                               |                             |                             |                             |                                        |                                               |
-| École Polytechnique Fédérale de Lausanne  | Yes, on acc.eduxchange.eu      |                                   |                                                   |                                                                            |                                               |                                               | ✅                           |                             |                             |                                        |                                               |
+| École Polytechnique Fédérale de Lausanne  | Yes, on acc.eduxchange.eu      |                                   |                                                   |                                                                            |                                               |                                               |                             |                             |                             |                                        |                                               |
 
 ## Catalog connections
 
@@ -41,7 +41,7 @@
 | Demo receiver (RP)     |                                          |
 | Demo OOAPI (RS)        |                                          |
 | L'X                    | APP-58D1A08C-BAFF-471D-B0E3-EA0E6930441C |
-| L'x (RS)               | APP-9513F637-654B-45C5-88DE-40085C766D27 |
+| L'x OOAPI (RS)         | APP-9513F637-654B-45C5-88DE-40085C766D27 |
 
 [Click here](https://github.com/SURFnet/eduxchange-eu-tech-docs/edit/main/progress-prod.md)
 to edit this page
