@@ -43,7 +43,7 @@ spring:
     locations: classpath:db/{vendor}/migration
 
 config:
-  connection_timeout_millis: 20_000
+  connection_timeout_millis: 15_000
   connection_pool_keep_alive_duration_millis: 300_000
   # Set to 0 to disable connection-pooling. If responses are slow,
   # connection-pooling does not matter anyway
