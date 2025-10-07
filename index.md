@@ -248,7 +248,7 @@ In the response to this call, only required fields are necessary:
       "redirect" : "https://optional.redirect/for-extra-information"
     }
     ```
-  
+
     For the `code` use these values:
 
     | Value | Label                                         |
