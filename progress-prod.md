@@ -9,7 +9,7 @@
 | Eindhoven University of Technology        | Yes, on acc.eduxchange.eu      | ``✅                               |                                                   | ✅                                                                          | ✅                                             | ✅                                             |                             |                             |                             |                                        |                                               |
 | Technical University of Munich            | Yes, on acc.eduxchange.eu      |                                   |                                                   |                                                                            |                                               |                                               |                             |                             |                             |                                        |                                               |
 | Technical University of Denmark           | Yes, on acc.eduxchange.eu      | ✅                                 | ✅                                                 |                                                                            |                                               |                                               | ✅                           |                             |                             |                                        |                                               |
-| Czech Technical University in Prague      | Yes, on acc.eduxchange.eu      |                                   |                                                   |                                                                            |                                               |                                               |                             |                             |                             |                                        |                                               |
+| Czech Technical University in Prague      | Yes, on acc.eduxchange.eu      | ✅                                 | ✅                                                 | ✅                                                                          | ✅                                             | ✅                                             |                             |                             |                             |                                        |                                               |
 | École Polytechnique Fédérale de Lausanne  | Yes, on acc.eduxchange.eu      |                                   |                                                   |                                                                            |                                               |                                               |                             |                             |                             |                                        |                                               |
 
 ## Catalog connections
@@ -34,8 +34,8 @@
 | TalTech OOAPI (RS)     | APP-09284C36-B38A-43A7-A2DA-6EF16AE32B10 |
 | Technion receiver (RP) |                                          |
 | Technion OOAPI (RS)    |                                          |
-| CTU receiver (RP)      |                                          |
-| CTU OOAPI (RS)         |                                          |
+| CTU receiver (RP)      | APP-8031A497-75E4-4B77-9DC6-3B0312B169E3 |
+| CTU OOAPI (RS)         | APP-EC80A730-D8B6-45C3-920B-9EED57B037A2 |
 | TU/e receiver (RP)     |                                          |
 | TU/e OOAPI (RS)        |                                          |
 | Demo receiver (RP)     |                                          |
