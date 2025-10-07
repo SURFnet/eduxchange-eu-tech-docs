@@ -222,23 +222,23 @@ In the response to this call, only required fields are necessary:
 ## About the enrollment receiver
 
 - How do I install or the enrollment receiver?
-  
+
   - It's advised to use the docker image [as described here](./running.md)
 
 - Can you tell me more about the communication between the generic part of the enrollment
   receiver and the custom implementation at the host institution?
-  
+
   - [Communication dataformat](./dataformat.md)
 
 - Do you have an example configuration of the enrollment receiver?
-  
+
   - [example application.yaml for enrollment receiver](./application.yaml)
 
 - What is the response from the SIS to the enrollment receiver?
-  
+
   - After processing the enrollment request in the host institution, and
     informing the home institution a response is returned to the enrollment receiver. The HTTP status code should always be 200, and the response should look like this:
-    
+
     ```json
     {
       "result": "ok",
@@ -248,9 +248,9 @@ In the response to this call, only required fields are necessary:
       "redirect" : "https://optional.redirect/for-extra-information"
     }
     ```
-    
+  
     For the `code` use these values:
-    
+
     | Value | Label                                         |
     | ----- | --------------------------------------------- |
     | 200   | 200 - All is good                             |
@@ -262,11 +262,11 @@ In the response to this call, only required fields are necessary:
     | 419   | 419 - eduID not present in the ARP            |
     | 422   | 422 - Administrative error (already enrolled) |
     | 500   | 500 - Not so good                             |
-    
+
     If a value is present for `redirect`, the user will be asked to provide extra
     information. A button will be shown sending the user to the form in a new
     window. Leave out this field if no extra form is required.
-    
+
     If enrollment is denied for any reason, use HTTP code 200 and 'code' 400 in
     the json message. Mention the reason for denying in the `message` field.
     This message will be shown to the end user directly, so be short and clear.
@@ -274,20 +274,20 @@ In the response to this call, only required fields are necessary:
 ## About openID and MyAcademicID
 
 - What are the url's for starting authentication/introspection/tokens at MyAcademicID?
-  
+
   - The MyAcademicID endpoints for openID can be found in the
     [well-known](https://proxy.prod.erasmus.eduteams.org/.well-known/openid-configuration)
     location. Please use a widely used library for all openID parts, instead
     of building it.
 
 - How can we start an enrollment for testing?
-  
+
   - There is a [demo enrollment broker](https://broker.test.eduxchange.eu/)
     available for testing.
-  
+
   - To connect to the demo enrollment broker, edit this yaml document
     and send it to Peter or Jelmer:
-    
+
     ```yaml
     schacHome: demoinst02.eduxchange.eu
     name: Demo 02 home  # The display name for your institution
@@ -311,25 +311,25 @@ In the response to this call, only required fields are necessary:
     ```
 
 - What are scopes? What should I use for scopes?
-  
+
   Scope is a mechanism in OAuth 2.0 to limit an application's access to a user's account. An application can request one or more scopes, this information is then presented to the user in the consent screen, and the access token issued to the application will be limited to the scopes granted.
-  
+
   For EuroTeQ, two general scopes are used:
-  
+
   - `email` : To retrieve the user's home institution email
   - `schac_personal_unique_code` : To retrieve the user's identifier at the home institution
-  
+
   Also, two institution specific scopes are used:
-  
+
   - `persons`: Personal Information
   - `results`: Enrollment and results
-  
+
   To make the scope identifier unique, the institution's primary domain is added.
   So to request access to the personal data of a student of MyUniversity, the
   scope `institution.tld/persons` is requested.
-  
+
   Currently, these scopes are known for EutoTeQ institutions:
-  
+
   - `demoinst01.eduxchange.eu/persons`
   - `demoinst01.eduxchange.eu/results`
   - `demoinst02.eduxchange.eu/persons`
@@ -342,34 +342,34 @@ In the response to this call, only required fields are necessary:
   - `technion.ac.il/results`
   - `tueacc-surf.osiris-link.nl/persons`
   - `tueacc-surf.osiris-link.nl/results`
-  
+
   When receiving a token, the MyUniversity's API endpoint **must** validate if
   the scope is valid for the API being called.
-  
+
   The scopes are passed to the intekenontvanger-generiek from the broker. The Intekenontvanger-generiek will handle the authentication and add the necessary scopes. The scopes for each institution are configured in the service registry.
-  
+
   If the scopes are not configured for your resource server (OOAPI endpoint) mail them to `support@myacademicid.org` to have them added.
-  
+
   You will only receive the `email` claim, `schac_personal_unique_id` is not available yet.
 
 - How do I connect to MyAcademicID?
-  
+
   - The enrollment receiver needs to be connected as a relying party to
     MyAcademicID. The API server needs to be connected as a Resource Server.
     Both can be registered by [filling in the MyAcademicId registration form](./registration.md)
 
 - How does this OpenID connect Oauth thing work? What is the flow for token
   introspection?
-  
+
   - [Here is a nice explanation of how OpenID connect works](https://yasasramanayaka.medium.com/openid-connect-authorization-code-flow-8c02081135fc).
   - The OpenID Connect flow is projected on the EuroTeQ usecase [in this diagram](./openidconnect.md)
 
 - How do I do introspection?
-  
+
   - Example using curl: `curl -k -u RS-Client-ID:RS-CLIENT-Secret -H 'Content-Type: application/x-www-form-urlencoded' -X POST --data 'token=eyJhbGciOiJFUzI1NiIsImtpZCI6Ik1sVm9jb...' https://proxy.prod.erasmus.eduteams.org/OIDC/introspect -q | jq`
-  
+
   - Example Response:
-    
+
     ```json
     {
      "active": true,
@@ -386,9 +386,9 @@ In the response to this call, only required fields are necessary:
      "email": "user.email@institution.tld"
     }
     ```
-  
+
   - In the response validate `"active": true` and the scopes for your institution are present. In the example `institution.tld/persons` and `institution.tld/results`
-  
+
   - Use the email to look up your user
 
 ## And more
