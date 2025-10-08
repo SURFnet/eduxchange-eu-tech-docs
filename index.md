@@ -356,7 +356,7 @@ In the response to this call, only required fields are necessary:
 
   - The enrollment receiver needs to be connected as a relying party to
     MyAcademicID. The API server needs to be connected as a Resource Server.
-    Both can be registered by [filling in the MyAcademicId registration form](./registration.md)
+    Both can be registered by [filling in the MyAcademicId registration form](./MyAcademicID - University Alliance - HEIs service registration.pdf)
 
 - How does this OpenID connect Oauth thing work? What is the flow for token
   introspection?
