@@ -16,8 +16,7 @@ tokens. It should be registered at the MyAcademicID Service.
 ![service details](./images/registration/2.png)
 
 4. Fill in the fields under `Contact information` and
-   `Service provider policies`. Use [https://eduxchange.eu/privacy](https://eduxchange.eu/privacy)
-   for the privacy policy.
+   `Service provider policies`. Use your linstitutions url's and confirm you comply to the policies.
 
 ![service details](./images/registration/3.png)
 
