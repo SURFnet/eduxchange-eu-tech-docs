@@ -39,7 +39,7 @@
 | TU/e receiver acc (RP) | APP-B470699E-4A4F-44B5-BF0F-ADFA21381B05 |
 | TU/e OOAPI acc (RS)    | APP-44A662C5-0319-4A38-B1AD-025DDC1D3779 |
 | TU/e receiver prd (RP) | APP-B993501D-3102-4375-B724-5D86C99D1307 |
-| TU/e OOAPI acc (RS)    |                                          |
+| TU/e OOAPI prd (RS)    | APP-78DAFB59-A3D6-40AB-AC4B-EC157C584381 |
 | Demo receiver (RP)     |                                          |
 | Demo OOAPI (RS)        |                                          |
 | L'X receiver (RP)      | APP-58D1A08C-BAFF-471D-B0E3-EA0E6930441C |
