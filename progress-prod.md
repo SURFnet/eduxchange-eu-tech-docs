@@ -36,8 +36,10 @@
 | Technion OOAPI (RS)    |                                          |
 | CTU receiver (RP)      | APP-8031A497-75E4-4B77-9DC6-3B0312B169E3 |
 | CTU OOAPI (RS)         | APP-EC80A730-D8B6-45C3-920B-9EED57B037A2 |
-| TU/e receiver (RP)     |                                          |
-| TU/e OOAPI (RS)        |                                          |
+| TU/e receiver acc (RP) | APP-B470699E-4A4F-44B5-BF0F-ADFA21381B05 |
+| TU/e OOAPI acc (RS)    | APP-44A662C5-0319-4A38-B1AD-025DDC1D3779 |
+| TU/e receiver prd (RP) | APP-B993501D-3102-4375-B724-5D86C99D1307 |
+| TU/e OOAPI acc (RS)    |                                          |
 | Demo receiver (RP)     |                                          |
 | Demo OOAPI (RS)        |                                          |
 | L'X receiver (RP)      | APP-58D1A08C-BAFF-471D-B0E3-EA0E6930441C |
