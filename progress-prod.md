@@ -39,7 +39,5 @@
 | TUM      | APP-1CA34AEE-9973-4B93-B1C2-5787F5882263 | APP-F068A6C0-D84B-475A-9B86-7470624CBF7D |
 | EPFL     | n/a                                      | n/a                                      |
 
-
-
 [Click here](https://github.com/SURFnet/eduxchange-eu-tech-docs/edit/main/progress-prod.md)
 to edit this page
