@@ -292,13 +292,13 @@ In the response to this call, only required fields are necessary:
     schacHome: demoinst02.eduxchange.eu
     name: Demo 02 home  # The display name for your institution
     abbreviation: Demo02home  # The short name
-    courseEndpoint: "https://demoinst02.eduxchange.eu/basic/offerings"  # The OOAPI endpoint for courses
+    courseEndpoint: "https://demoinst02.eduxchange.eu/basic/offerings"  # The OOAPI endpoint for offerings, Not used when useEduHubForOffering=True
     courseAuthentication: BASIC  # For authenticating to the offerings endpoint, Not used when useEduHubForOffering=True
     courseAuthenticationUserName: "user"  # For authenticating to the offerings endpoint, Not used when useEduHubForOffering=True
     courseAuthenticationPassword: "secret"  # For authenticating to the offerings endpoint, Not used when useEduHubForOffering=True
     personsEndpoint: "https://demoinst02.eduxchange.eu/persons/me"  # The OOAPI endpoint for persons
     personAuthentication: HEADER  # Should always be HEADER for token based authentication
-    associationsEndpoint: "https://demoinst02.eduxchange.eu/associations" # The OOAPI endpoint for courses
+    associationsEndpoint: "https://demoinst02.eduxchange.eu/associations" # The OOAPI endpoint for associations
     authenticationEndpoint: "https://demoinst01.eduxchange.eu/api/enrollment" # This is on the enrollment-receiver
     registrationEndpoint: "https://demoinst01.eduxchange.eu/api/start"  # This is on the enrollment-receiver
     registrationUser: "user"  # These are configured in the broker section of the enrollment-receiver config file
