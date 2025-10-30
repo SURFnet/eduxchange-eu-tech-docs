@@ -132,8 +132,6 @@ Once the Host institution has done the initial processing after the Enrollment R
 - An expanded course attribute in the offering
 - An issuer, e.g. information about the Host Institution
 
-_Note_: The OOAPIv5 spec only specifies HTTP rescponse 201 (CREATED) or 400 (Bad Request). If the enrollment is denied at the home institution for administrative reasons (and you don;t create an association for this request), we've agreed to respond with an HTTP 200 code, without an associationID, but `dinied` in the state.
-
 ##### Minimal required attributes for associations
 
 association
