@@ -1,4 +1,4 @@
-## schachome
+# schachome
 
 The [schachome](https://wiki.refeds.org/display/STAN/SCHAC) is an idrntifier that's based upon the promary domain name for an institution.
 
