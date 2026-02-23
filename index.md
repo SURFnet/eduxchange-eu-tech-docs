@@ -267,7 +267,7 @@ In the response to this call, only required fields are necessary:
     information. A button will be shown sending the user to the form in a new
     window. Leave out this field if no extra form is required.
 
-    If enrollment is denied for any reason, use HTTP code 200 and 'code' 400 in
+    If enrollment is denied for any reason, use HTTP code 200 and 'code' 422 in
     the json message. Mention the reason for denying in the `message` field.
     This message will be shown to the end user directly, so be short and clear.
 
