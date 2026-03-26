@@ -27,6 +27,28 @@ The `score` field is a string, but its content must align with the `resultValueT
 | | | |
 | | | |
 
+### example request
+
+```json
+PATCH /associations/{associationId}
+Content-Type: application/json
+
+{
+  "result": {
+    "state": "completed",
+    "pass": "passed",
+    "comment": "string",
+    "score": "9",
+    "resultDate": "2020-09-28",
+    "ext": {},
+    "studyLoad": {
+		  "studyLoadUnit": "ects",
+		   "value": 15
+	     }
+  }
+}
+```
+
 ### The `ext` Object and Teaching Person
 
 For administrative transparency, use the `ext` (extension) object to include the name of the examiner or teacher responsible for the grade as `responsibleTeachers`.
