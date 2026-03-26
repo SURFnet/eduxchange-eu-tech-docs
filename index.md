@@ -143,6 +143,7 @@ association
 
 association.offering
 
+- offeringId
 - primaryCode
   - { codeType=`offeringCode`, code=offeringId }
 - offeringType

@@ -10,6 +10,7 @@
    "state": "associated", // The desired state the Host would like the Home institution to reach.
    "remoteState": "associated", // The initial state the Host has reached so far. Could also be pending or queued.
    "offering": { // The offering the student is trying to enroll on
+      "offeringId": "123e4567-e89b-12d3-a456-426614174000",
       "primaryCode": {
          "codeType": "offeringCode",
          "code": "123e4567-e89b-12d3-a456-426614174000"
