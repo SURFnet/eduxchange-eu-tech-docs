@@ -6,6 +6,7 @@
 [About enrollment](#about-enrollment)\
 [About the enrollment receiver](#about-the-enrollment-receiver)\
 [About openID and MyAcademicID](#about-openid-and-myacademicid)\
+[Grade Return](./gradereturn.md)\
 [And more](#and-more)
 
 ## Overview
