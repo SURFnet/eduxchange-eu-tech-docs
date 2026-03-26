@@ -398,7 +398,8 @@ In the response to this call, only required fields are necessary:
 
 After the student has completed the course, the result will be returned to the
 home institution by sending a `PATCH /associations/{associationId}` message.
-[Details on Grade Return](./gradereturn.md)\
+
+[Details on Grade Return](./gradereturn.md)
 
 ## And more
 
