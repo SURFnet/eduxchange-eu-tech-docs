@@ -29,7 +29,7 @@ The `score` field is a string, but its content must align with the `resultValueT
 
 ### The `ext` Object and Teaching Person
 
-For administrative transparency, use the `ext` (extension) object to include the name of the examiner or teacher responsible for the grade.
+For administrative transparency, use the `ext` (extension) object to include the name of the examiner or teacher responsible for the grade as `responsibleTeachers`.
 
 See [the eduxchange profile](https://openonderwijsapi.nl/#/technical/consumers-and-profiles/eduxchange)
 
@@ -41,15 +41,15 @@ Content-Type: application/json
 
 {
   "result": {
-    "state": "passed",
-    "score": "9.0",
-    "resultDate": "2026-03-26",
+    ...
     "ext": {
-      "teachingPerson": {
-        "name": "Prof. Dr. Jane Doe"
-      }
+        "responsibleTeachers": [
+            {
+                "givenName": "Harry",
+                "surname": "Potter"
+            }
+        ]
     }
-  },
-  "remoteState": "completed"
+  }
 }
 ```
