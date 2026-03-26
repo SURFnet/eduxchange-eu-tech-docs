@@ -6,7 +6,7 @@
 [About enrollment](#about-enrollment)\
 [About the enrollment receiver](#about-the-enrollment-receiver)\
 [About openID and MyAcademicID](#about-openid-and-myacademicid)\
-[Grade Return](./gradereturn.md)\
+[Grade Return](#about-grade-return)\
 [And more](#and-more)
 
 ## Overview
@@ -209,6 +209,8 @@ With this call the Host institution can inform the Home institution about any up
 
 To update the Home institution, the Host institution should use the `remoteState` field in the `PATCH` request.
 
+This patch is also used to return the results. See [Grade Return](#about-grade-return)
+
 #### `GET /associations/{associationId}`
 
 With this call the Host institution can request the current associationState from the Home institution. This is needed when the Home institution returned a `pending` state during the initial enrolment flow. The Host institution should then poll the Home institution (for example using a cron job) to check whether the Home institution has reached a new state.
@@ -391,6 +393,12 @@ In the response to this call, only required fields are necessary:
   - In the response validate `"active": true` and the scopes for your institution are present. In the example `institution.tld/persons` and `institution.tld/results`
 
   - Use the email to look up your user
+
+## About Grade return
+
+After the student has completed the course, the result will be returned to the
+home institution by sending a `PATCH /associations/{associationId}` message.
+[Details on Grade Return](./gradereturn.md)\
 
 ## And more
 
