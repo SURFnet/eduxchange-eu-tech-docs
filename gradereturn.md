@@ -67,8 +67,7 @@ Content-Type: application/json
     "ext": {
         "responsibleTeachers": [
             {
-                "givenName": "Harry",
-                "surname": "Potter"
+                "displayName": "Harry Potter",
             }
         ]
     }
