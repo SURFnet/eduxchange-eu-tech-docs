@@ -14,7 +14,7 @@ This implementation strictly uses the **Course Result** level. We do not utilize
 
 ### Technical Mapping: `resultValueType` & `score`
 
-The `score` field is a string, but its content must align with the `resultValueType` defined in the **Offering** object. This ensures the Home Institution can correctly parse the value into their local Student Information System (SIS).
+The `score` field is a string, but its content must align with the `resultValueType` defined in the **Offering** object. This ensures the Home Institution can correctly parse the value into their local Student Information System (SIS). As currently it is not mandatory to transmit the `resultValueType` (which was an oversight), it is necessary to transmit the `resultValueType` for the `score` in the `ext` object.
 
 | `resultValueType` | Description | Example `score` |
 | :--- | :--- | :--- |
@@ -24,7 +24,7 @@ The `score` field is a string, but its content must align with the `resultValueT
 | `0-100` | Percentage or point-based scale. | `"88"` |
 | `1-10` | Standard decimal scale (e.g., Dutch/European). | `"7.5"` |
 | **EuroTeQ Specifics** | | |
-| | | |
+| `` | | |
 | | | |
 
 ### example request
@@ -40,7 +40,9 @@ Content-Type: application/json
     "comment": "string",
     "score": "9",
     "resultDate": "2020-09-28",
-    "ext": {},
+    "ext": {
+		"resultValueType": "1-10",
+	},
     "studyLoad": {
 		  "studyLoadUnit": "ects",
 		   "value": 15
